@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import 'boxicons';
+// import 'boxicons';
 import '../styles.css';
 
 function upload_img(event, setPinImage) {
