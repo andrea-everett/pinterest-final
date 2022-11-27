@@ -2,20 +2,6 @@ import React, {useState} from 'react';
 // import 'boxicons';
 import '../styles.css';
 
-function upload_img(event, setPinImage) {
-        if (event.target.files && event.target.files[0]) {
-                if (/image\/*/.test(event.target.files[0].type)) {
-                        const reader = new FileReader();
-
-                        reader.onload = function() {
-                                setPinImage(reader.result);
-                        }
-                        reader.readAsDataURL(event.target.files[0]);
-                }
-        }
-}
-
-
  function Pin() {
 const [pinImage, setPinImage] = useState();
   return (
