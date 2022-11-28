@@ -1,19 +1,52 @@
-import React from { useState} 'react';
+import React, { useState} from 'react';
 
-function upload_img(event, setPinImage) {
+function upload_img(event, pinDetails, setPinDetails, setShowLabel, setShowModalPin) {
         if (event.target.files && event.target.files[0]) {
                 if (/image\/*/.test(event.target.files[0].type)) {
                         const reader = new FileReader();
 
                         reader.onload = function() {
-                                setPinImage(reader.result);
+                                setPinDetails({
+                                        ...pinDetails,
+                                        img_blob: reader.result
+                                });
+                                setShowLabel(false);
+                                setShowLabel(true);
                         }
                         reader.readAsDataURL(event.target.files[0]);
                 }
         }
 }
 
+function check_size(event) {
+        const image = event.target;
+
+        image.classList.add('pin_max_width');
+
+        if (
+                image.getBoundingClientRect().width < image.parentElement.getBoundingClientRect().width ||
+                image.getBoundingClientRect().width < image.parentElement.getBoundingClientRect().height
+        ) {
+                image.classList.remove('pin_max_width');
+                image.classList.add('pin_max_height');
+        }
+
+        image.style.opacity = 1;
+}
+
 function Modal() {
+        const [pinDetails, setPinDetails] = useState({
+                author: '',
+                board: '',
+                title: '',
+                description: '',
+                destination: '',
+                img_blob: '',
+                pin_size: '',
+        })
+        const [showLabel, setShowLabel] = useState(true);
+        const [showModalPinl, setShowModalPin] = useState(false);
+
   return (
         <div className='bg-green-100'>
                 <div className='pin-container'>
@@ -26,6 +59,9 @@ function Modal() {
 
                                 <div className='section2'>
                                             <label htmlFor='upload-img' id="upload-img-label">
+                                                        style={{
+                                                                display: showLabel ? 'block' : 'none'
+                                                        }}
                                                     <div className='upload-img-container'>
                                                             <div id='dotted-border'>
                                                                 <box-icon name='right-top-arrow-circle'></box-icon>
@@ -33,11 +69,14 @@ function Modal() {
                                                             <div>Click to upload</div>
                                                             <div>Recommendation: Use high-quality .jpg</div>
                                                     </div>
-                                                    <input type="file" name="upload-img" id="upload-img" />
+                                                    <input onChange={event => upload_img(event, pinDetails, setPinDetails, setShowLabel, setShowModalPin)} type="file" name="upload-img" id="upload-img" />
                                             </label>
                                 </div>
 
                                 <div className='modal-pin'>
+                                                style={{
+                                                        display: showModalPin ? 'block' : 'none'
+                                                }}
                                     <div className='pin-img'>
                                         {/* <img src={pinImage} alt='pin-img'></img> */}
                                     </div>
@@ -71,8 +110,6 @@ function Modal() {
                                 <div className='section3'>
 
                                 </div>
-
-
                         </div>
                 </div>
         </div>
