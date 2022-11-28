@@ -34,6 +34,19 @@ function check_size(event) {
         image.style.opacity = 1;
 }
 
+function save_pin(pinDetails) {
+        const users_data = {
+                ...pinDetails,
+                author: 'Jack',
+                board: 'default',
+                title: document.querySelector('#pin_title').value,
+                description: document.querySelector('#pin_description').value,
+                desitination: document.querySelector('#pin_destination').value,
+                pin_size: document.querySelector('#pin_size').value
+        }
+        console.log(users_data)
+}
+
 function Modal() {
         const [pinDetails, setPinDetails] = useState({
                 author: '',
@@ -45,7 +58,7 @@ function Modal() {
                 pin_size: '',
         })
         const [showLabel, setShowLabel] = useState(true);
-        const [showModalPinl, setShowModalPin] = useState(false);
+        const [showModalPin, setShowModalPin] = useState(false);
 
   return (
         <div className='bg-green-100'>
@@ -78,7 +91,7 @@ function Modal() {
                                                         display: showModalPin ? 'block' : 'none'
                                                 }}
                                     <div className='pin-img'>
-                                        {/* <img src={pinImage} alt='pin-img'></img> */}
+                                        <img onLoad= {check_size} src={pinDetails.img_blob} alt='pin-img'></img>
                                     </div>
                                 </div>
 
@@ -96,7 +109,7 @@ function Modal() {
                                                         <option value="medium">Medium</option>
                                                         <option value="large">Large</option>
                                                         </select>
-                                                        <div className='save-pin'>Save</div>
+                                                        <div onClick={()=> save_pin(pinDetails)} className='save-pin'>Save</div>
                                         </div>
 
                                 </div>
