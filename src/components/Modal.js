@@ -62,9 +62,9 @@ function Modal() {
         const [showModalPin, setShowModalPin] = useState(false);
 
   return (
-        <div className='bg-green-100'>
-                <div className='pin-container'>
-                        <div className='side' id='left'>
+        <div className='relative mx-auto w-5/6 h-96 bg-gray-300 '>
+                <div className='grid grid-cols-2 gap-10 h-100'>
+                        <div className='items-center' id='left'>
                                 <div className='section1'>
                                         <div className='mock-icon-container'>
                                         <box-icon name='dots-horizontal-rounded'></box-icon>    
@@ -76,7 +76,7 @@ function Modal() {
                                                         style={{
                                                                 display: showLabel ? 'block' : 'none'
                                                         }}>
-                                                    <div className='upload-img-container'>
+                                                    <div className='absolute bottom-40 items-center'>
                                                             <div id='dotted-border'>
                                                                 <box-icon name='right-top-arrow-circle'></box-icon>
                                                             </div> 
@@ -97,28 +97,28 @@ function Modal() {
                                 </div>
 
                                 <div className='section3'>
-                                        <div className='bg-green-100'>Save from site</div>
+                                        <div className='absolute  bottom-20  bg-gray-100 text-center  w-30% rounded'>Save from site</div>
                                 </div>
                         </div>
 
-                        <div className='side' id='right'>
+                        <div className='relative' id='right'>
                                 <div className='section1'>
-                                        <div className='select-size'>
-                                                <select defaultValue="Select" name="pin-size" id='pin-size'>
+                                        <div className='flex'>
+                                                <select defaultValue="Select" className="w-15" id='pin-size'>
                                                         <option value="">Select</option>
                                                         <option value="small">Small</option>
                                                         <option value="medium">Medium</option>
                                                         <option value="large">Large</option>
                                                         </select>
-                                                        <div onClick={()=> save_pin(pinDetails)} className='save-pin'>Save</div>
+                                                        <div onClick={()=> save_pin(pinDetails)} className='bg-red-500 w-11 rounded'>Save</div>
                                         </div>
 
                                 </div>
 
-                                <div className='section2'>
-                                        <input placeholder='Add your title'  type="text" className='new-pin-input' id="pin-title" />
-                                        <input placeholder='Tell everyone what your pin is about' type="text" className='new-pin-input' id="pin-description" />
-                                        <input placeholder='Add a destination link' type="text" className='new-pin-input' id="pin-destination" />
+                                <div className='absolute'>
+                                        <input placeholder='Add your title'  type="text" className='absolute top-30' id="pin-title" />
+                                        <input placeholder='Tell everyone what your pin is about' type="text" className='top-50' id="pin-description" />
+                                        <input placeholder='Add a destination link' type="text" className='bottom-10' id="pin-destination" />
                                 </div>
 
                                 <div className='section3'>
