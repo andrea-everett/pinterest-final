@@ -1,4 +1,5 @@
 import React, { useState} from 'react';
+import "../index.css";
 
 function upload_img(event, pinDetails, setPinDetails, setShowLabel, setShowModalPin) {
         if (event.target.files && event.target.files[0]) {
@@ -71,10 +72,10 @@ function Modal() {
                                 </div>
 
                                 <div className='section2'>
-                                            <label htmlFor='upload-img' id="upload-img-label">
+                                            <label htmlFor='upload-img' id="upload-img-label"
                                                         style={{
                                                                 display: showLabel ? 'block' : 'none'
-                                                        }}
+                                                        }}>
                                                     <div className='upload-img-container'>
                                                             <div id='dotted-border'>
                                                                 <box-icon name='right-top-arrow-circle'></box-icon>
@@ -86,10 +87,10 @@ function Modal() {
                                             </label>
                                 </div>
 
-                                <div className='modal-pin'>
+                                <div className='modal-pin'
                                                 style={{
                                                         display: showModalPin ? 'block' : 'none'
-                                                }}
+                                                }}>
                                     <div className='pin-img'>
                                         <img onLoad= {check_size} src={pinDetails.img_blob} alt='pin-img'></img>
                                     </div>
