@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
 import "../index.css";
+import 'boxicons';
 
 function upload_img(event, pinDetails, setPinDetails, setShowLabel, setShowModalPin) {
         if (event.target.files && event.target.files[0]) {
@@ -62,8 +63,8 @@ function Modal() {
         const [showModalPin, setShowModalPin] = useState(false);
 
   return (
-        <div className='flex justify-center items-center'>
-        <div className='relative container mx-auto  bg-white w-3/4 h-50%'>
+        <div className='absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-9999  w-3/4 '>
+        <div className='object-center relative container mx-auto  bg-white w-10/12 h-5/6 border-8'>
                 <div className=' grid grid-cols-2  h-96 '>
 
                         <div className='relative' id='left'>
@@ -73,17 +74,17 @@ function Modal() {
                                         </div>
                                 </div>
 
-                                <div className='  bg-gray-100 h-3/4  text-center text-black'>
+                                <div className='absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-100 w-3/4 h-3/4  text-center text-black'>
                                             <label htmlFor='upload-img' id="upload-img-label"
                                                         style={{
                                                                 display: showLabel ? 'block' : 'none'
                                                         }}>
                                                     <div className='absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
                                                             <div id='dotted-border'>
-                                                                <box-icon name='right-top-arrow-circle'></box-icon>
+                                                            <box-icon name='up-arrow-circle'></box-icon>
                                                             </div> 
                                                             <div>Click to upload</div>
-                                                            <div>Recommendation: Use high-quality .jpg</div>
+                                                            <div className='w-full'>Recommendation: Use high-quality .jpg</div>
                                                     </div>
                                                     <input onChange={event => upload_img(event, pinDetails, setPinDetails, setShowLabel, setShowModalPin)} type="file" name="upload-img" id="upload-img" />
                                             </label>
@@ -99,7 +100,7 @@ function Modal() {
                                 </div>
 
                                 <div className='section3'>
-                                        <div className='absolute  bottom-10 left-12 bg-gray-100 text-center  w-3/4 rounded'>Save from site</div>
+                                        <div className='absolute  left-1/2 bottom-1 -translate-x-1/2 -translate-y-1/2 bg-gray-100 text-center  w-3/4 rounded'>Save from site</div>
                                 </div>
                         </div>
 
@@ -117,8 +118,8 @@ function Modal() {
                                         </div>
 
                                                 <div className='absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-                                                        <input placeholder='Add your title'  type="text" className='text-m border-b-5 w-64  pb-7' id="pin-title" />
-                                                        <input placeholder='Tell everyone what your pin is about' type="text" className='text-m border-b-3 w-full   pb-7' id="pin-description" />
+                                                        <input placeholder='Add your title'  type="text" className='text-m border-b-10 w-64  h-34 pb-7' id="pin-title" />
+                                                        <input placeholder='Tell everyone what your pin is about' type="text" className='text-m border-b-3 border-gray-400 w-full   pb-7' id="pin-description" />
                                                         <input placeholder='Add a destination link' type="text" className='text-m border-b-3 w-64  pb-7' id="pin-destination" />
                                                 </div>
                                       
