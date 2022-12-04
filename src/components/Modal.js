@@ -2,23 +2,23 @@ import React, { useState} from 'react';
 import "../index.css";
 import 'boxicons';
 
-function upload_img(event, pinDetails, setPinDetails, setShowLabel, setShowModalPin) {
-        if (event.target.files && event.target.files[0]) {
-                if (/image\/*/.test(event.target.files[0].type)) {
-                        const reader = new FileReader();
+// function upload_img(event, pinDetails, setPinDetails, setShowLabel, setShowModalPin) {
+//         if (event.target.files && event.target.files[0]) {
+//                 if (/image\/*/.test(event.target.files[0].type)) {
+//                         const reader = new FileReader();
 
-                        reader.onload = function() {
-                                setPinDetails({
-                                        ...pinDetails,
-                                        img_blob: reader.result
-                                });
-                                setShowLabel(false);
-                                setShowLabel(true);
-                        }
-                        reader.readAsDataURL(event.target.files[0]);
-                }
-        }
-}
+//                         reader.onload = function() {
+//                                 setPinDetails({
+//                                         ...pinDetails,
+//                                         img_blob: reader.result
+//                                 });
+//                                 setShowLabel(false);
+//                                 setShowLabel(true);
+//                         }
+//                         reader.readAsDataURL(event.target.files[0]);
+//                 }
+//         }
+// }
 
 function check_size(event) {
         const image = event.target;
@@ -36,17 +36,18 @@ function check_size(event) {
         image.style.opacity = 1;
 }
 
-function save_pin(pinDetails) {
+
+function save_pin(pinDetails, add_pin) {
         const users_data = {
                 ...pinDetails,
                 author: 'Jack',
                 board: 'default',
-                title: document.querySelector('#pin_title').value,
-                description: document.querySelector('#pin_description').value,
-                desitination: document.querySelector('#pin_destination').value,
-                pin_size: document.querySelector('#pin_size').value
+                title: document.querySelector('#pin-title').value,
+                description: document.querySelector('#pin-description').value,
+                destination: document.querySelector('#pin-destination').value,
+                pin_size: document.querySelector('#pin-size').value
         }
-        console.log(users_data)
+        add_pin(users_data)
 }
 
 function Modal() {
@@ -64,7 +65,7 @@ function Modal() {
 
   return (
         <div className='absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-9999  w-3/4 '>
-        <div className='object-center relative container mx-auto  bg-white w-10/12 h-5/6 border-8'>
+        <div className='pin-modal-container object-center relative container mx-auto  bg-white w-10/12 h-5/6 border-8' id="">
                 <div className=' grid grid-cols-2  h-96 '>
 
                         <div className='relative' id='left'>
@@ -83,7 +84,7 @@ function Modal() {
                                                             <div id='dotted-border'>
                                                             <box-icon name='up-arrow-circle'></box-icon>
                                                             </div> 
-                                                            <div>Click to upload</div>
+                                                            <div className='w-full h-full'>Click to upload</div>
                                                             <div className='w-full'>Recommendation: Use high-quality .jpg</div>
                                                     </div>
                                                     <input onChange={event => upload_img(event, pinDetails, setPinDetails, setShowLabel, setShowModalPin)} type="file" name="upload-img" id="upload-img" />
@@ -113,7 +114,7 @@ function Modal() {
                                                                 <option value="medium">Medium</option>
                                                                 <option value="large">Large</option>
                                                                 </select>
-                                                                <div onClick={()=> save_pin(pinDetails)} className=' bg-red-500 text-center w-16 rounded text-white'>Save</div>
+                                                                <div onClick={()=> save_pin(pinDetails, props.add_pin)} className=' bg-red-500 text-center w-16 rounded text-white' id="save_pin">Save</div>
                                                 </div>
                                         </div>
 
