@@ -12,7 +12,6 @@ import Pin from './Pin.js';
             this.state = {
                 pins:[],
                 show_modal: false
-
             }
         }
 
@@ -23,7 +22,7 @@ import Pin from './Pin.js';
                     ]
 
                     new_pins.push(
-                        <Pin key={_state.pins.length} />
+                        <Pin pinDetails={pinDetails} key={_state.pins.length} />
                     )
                     return {
                         pins: new_pins,
@@ -31,7 +30,6 @@ import Pin from './Pin.js';
                     }
                 })
         }
-
 
   render() {
             return (
