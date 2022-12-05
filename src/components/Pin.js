@@ -52,7 +52,7 @@ function Pin(props) {
                             </div>
                     </div>
 
-                <div className='pin_image opacity-0 w-full h-full'></div>
+                <div className='pin_image'></div>
                                 <img onLoad={check_size} src={props.pinDetails.img_blob}></img>
                 </div>
     </div>
