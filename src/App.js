@@ -2,12 +2,13 @@ import './App.css';
 
 import React from 'react';
 // import  Modal  from './components/Modal';
-import ModalAndPin from './components/ModalAndPin.js'
+// import ModalAndPin from './components/ModalAndPin.js';
+import FinalBoard from './components/FinalBoard.js'
 
 
 function App() {
   return (
-        < ModalAndPin />
+        <FinalBoard />
   );
 }
 
