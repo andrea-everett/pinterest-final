@@ -5,7 +5,6 @@ import Modal from './Modal.js';
 import Pin from './Pin.js';
 
 
-
  class ModalAndPin extends React.Component {
         constructor(props) {
             super(props);

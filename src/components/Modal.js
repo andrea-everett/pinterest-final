@@ -36,6 +36,18 @@ function check_size(event) {
         image.style.opacity = 1;
 }
 
+// const check_size = document.querySelector("#image_input");
+// var modals_pin = "";
+
+// modals_pin.addEventListener("change", function(){
+//         const reader = new FileReader();
+//         reader.addEventListener("load", () => {
+//                 upload_img = reader.result;
+//                 document.querySelector("#display_image").style.backgroundImage = `url(${modals_pin})`
+//         });
+//         reader.readAsDataURL(this.files[0]);
+// })
+
 function save_pin(pinDetails, add_pin) {
         const users_data = {
                 ...pinDetails,
@@ -46,6 +58,7 @@ function save_pin(pinDetails, add_pin) {
                 destination: document.querySelector('#pin_destination').value,
                 pin_size: document.querySelector('#pin_size').value,
         }
+        console.log(users_data)
         add_pin(users_data);
 }
 
@@ -92,13 +105,8 @@ function Modal(props) {
                                         </label>
                                 </div>
 
-                                <div className='modals_pin'
-                                                style={{
-                                                        display: showModalPin ? 'block' : 'none'
-                                                }}>
-                                    <div className='pin_image opacity-0 '>
-                                        <img  onLoad={check_size} src={pinDetails.img_blob} alt='pin_image'></img>
-                                    </div>
+                                <div className={`modals_pin max-w-full max-h-full ${showModalPin ? 'block' :  'hidden'}`}>
+                                        <img  onLoad={check_size} src={pinDetails.img_blob} alt='pin_image' id='pin_image'></img>
                                 </div>
 
                                 <div className='section3'>
@@ -124,9 +132,7 @@ function Modal(props) {
                                                         <input placeholder='Tell everyone what your pin is about' type="text" className='text-m border-b-3 border-gray-400 w-full   pb-7' id="pin_description" />
                                                         <input placeholder='Add a destination link' type="text" className='text-m border-b-3 w-64  pb-7' id="pin_destination" />
                                                 </div>
-                                      
-                                       
-
+                
                                 <div className='section3'>
 
                                 </div>
