@@ -87,8 +87,8 @@ function Modal(props) {
                                         </div>
                                 </div>
 
-                                <div className='absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-100 w-3/4 h-3/4  text-center text-black'>
-                                        <label htmlFor='upload_img' id="upload_img_label"
+                                <div className='section2 absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-100 w-3/4 h-3/4  text-center text-black'>
+                                        <label htmlFor='upload_img' id="upload_img_label" 
                                                         style={{
                                                                 display: showLabel ? 'block' : 'none'
                                                         }}>
@@ -103,11 +103,13 @@ function Modal(props) {
                                                          </div>
                                                     <input onChange={event => upload_img(event, pinDetails, setPinDetails, setShowLabel, setShowModalPin)} type="file" name="upload_img" id="upload_img" />
                                         </label>
+
+                                        <div className={`modals_pin w-full h-full ${showModalPin ? 'block' :  'hidden'}`}>
+                                                <img  className='object-cover w-full h-full object-center 'onLoad={check_size} src={pinDetails.img_blob} alt='pin_image' id='pin_image'></img>
+                                        </div>
                                 </div>
 
-                                <div className={`modals_pin max-w-full max-h-full ${showModalPin ? 'block' :  'hidden'}`}>
-                                        <img  onLoad={check_size} src={pinDetails.img_blob} alt='pin_image' id='pin_image'></img>
-                                </div>
+                           
 
                                 <div className='section3'>
                                         <div className='absolute  left-1/2 bottom-1 -translate-x-1/2 -translate-y-1/2 bg-gray-100 text-center  w-3/4 rounded'>Save from site</div>
