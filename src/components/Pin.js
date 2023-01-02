@@ -53,7 +53,7 @@ function Pin(props) {
                     </div>
 
                 <div className='pin_image'></div>
-                                <img onLoad={check_size} src={props.pinDetails.img_blob} alt=''></img>
+                                <img onLoad={check_size} src={props.pinDetails.img_blob} alt='pin_image'></img>
                 </div>
 //     </div>
   )

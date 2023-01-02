@@ -76,7 +76,7 @@ function Modal(props) {
         const [showModalPin, setShowModalPin] = useState(false);
 
   return (
-        <div className='add_pin_modal absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-9999  w-3/4 '>
+        <div className='add_pin_modal absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-9999  w-3/4 bg-gray-100 '>
         <div className='pin-modal-container object-center relative container mx-auto  bg-white w-10/12 h-5/6 border-8' id="">
                 <div className=' grid grid-cols-2  h-96 '>
 
@@ -108,8 +108,6 @@ function Modal(props) {
                                                 <img  className='object-cover w-full h-full object-center 'onLoad={check_size} src={pinDetails.img_blob} alt='pin_image' id='pin_image'></img>
                                         </div>
                                 </div>
-
-                           
 
                                 <div className='section3'>
                                         <div className='absolute  left-1/2 bottom-1 -translate-x-1/2 -translate-y-1/2 bg-gray-100 text-center  w-3/4 rounded'>Save from site</div>

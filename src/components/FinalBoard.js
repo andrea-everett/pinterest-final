@@ -34,7 +34,7 @@ import Pin from './Pin.js';
   render() {
             return (
             <div>
-                    <div className='w-full h-4 fixed top-0'>
+                    <div className='navigation-bar w-full h-4 fixed top-0'>
                             <div onClick={() => this.setState({ show_modal:true})} className="pin_mock_icon_container add_pin">
                             <div className=' pint_mock_container flex justify-end w-60px h-60px p-10'>
                                     <box-icon name='plus-circle'></box-icon>
