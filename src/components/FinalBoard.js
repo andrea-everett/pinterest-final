@@ -36,7 +36,7 @@ import Pin from './Pin.js';
             <div>
                     <div className='navigation-bar w-full h-4 fixed top-0'>
                             <div onClick={() => this.setState({ show_modal:true})} className="pin_mock_icon_container add_pin">
-                            <div className=' pint_mock_container flex justify-end w-60px h-60px p-10'>
+                            <div className=' pint_mock_container flex justify-end w-20px h-60px p-10'>
                                     <box-icon name='plus-circle'></box-icon>
                             </div>
                             </div>
@@ -49,10 +49,9 @@ import Pin from './Pin.js';
                     <div onClick={event => event.target.className === 'add_pin_modal' ? this.setState({show_modal :false}) : null } 
                         className='add_pin_modal_container'>
                          {
-                        this.state.show_modal ?
-                            <Modal add_pin={this.add_pin} /> : null
-                         }
-                        <Modal />
+                            this.state.show_modal ?
+                                <Modal add_pin={this.add_pin} /> : null
+                         }                    
                     </div>
             </div>
          )
