@@ -105,7 +105,7 @@ function Modal(props) {
                                         </label>
 
                                         <div className={`modals_pin w-full h-full ${showModalPin ? 'block' :  'hidden'}`}>
-                                                <img  className='object-cover w-full h-full object-center 'onLoad={check_size} src={pinDetails.img_blob} alt='pin_image' id='pin_image'></img>
+                                                <img  className='rounded object-cover w-full h-full object-center 'onLoad={check_size} src={pinDetails.img_blob} alt='pin_image' id='pin_image'></img>
                                         </div>
                                 </div>
 
@@ -128,9 +128,20 @@ function Modal(props) {
                                         </div>
 
                                                 <div className='absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-                                                        <input placeholder='Add your title'  type="text" className='text-m border-b-10 w-64  h-34 pb-7' id="pin_title" />
-                                                        <input placeholder='Tell everyone what your pin is about' type="text" className='text-m border-b-3 border-gray-400 w-full   pb-7' id="pin_description" />
-                                                        <input placeholder='Add a destination link' type="text" className='text-m border-b-3 w-64  pb-7' id="pin_destination" />
+                                                        <label>
+                                                                Title
+                                                                <input placeholder='Add your title'  type="text" className='text-m border-b-10 w-64  h-34 pb-7' id="pin_title" />
+                                                        </label>
+
+                                                        <label>
+                                                                Pin Details
+                                                                <input placeholder='Tell everyone what your pin is about' type="text" className='text-m border-b-3 border-gray-400 w-full   pb-7' id="pin_description" />
+                                                        </label>
+
+                                                        <label>
+                                                                  Link
+                                                                  <input placeholder='Add a destination link' type="text" className='text-m border-b-3 w-64  pb-7' id="pin_destination" />
+                                                        </label>
                                                 </div>
                 
                                 <div className='section3'>

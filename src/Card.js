@@ -34,7 +34,6 @@ import 'boxicons';
                             </div>
 
                     </div>
-
                     <div className='pin_image'></div>
                             <box-icon name='pin'></box-icon>
                 </div>
