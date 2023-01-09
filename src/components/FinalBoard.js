@@ -47,7 +47,7 @@ import Pin from './Pin.js';
                     </div>
 
                     <div onClick={event => event.target.className === 'add_pin_modal' ? this.setState({show_modal :false}) : null } 
-                        className='add_pin_modal_container'>
+                        className='add_pin_modal_container  bg-gray-200'>
                          {
                             this.state.show_modal ?
                                 <Modal add_pin={this.add_pin} /> : null
