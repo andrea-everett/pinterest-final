@@ -26,34 +26,30 @@ function Pin(props) {
 //             <input onChange={event => upload_img(event, setPinImage)} type="file" name='picture' id="picture"></input>
 
                 <div className={`${props.pinDetails.pin_size}`} >
-                    <div className='pin_title'>{props.pinDetails.title}</div>
+                    <div className='pin_title hidden'>{props.pinDetails.title}</div>
 
-                    <div className='pin_modal'>
-                            <div className='modal_head'>
-                                    <div className='bg-red-600'>Save</div>
+                    <div className='pin_modal relative rounded-lg'>
+                            <div className='hover:modal_head absolute right-1 top-1 text-center w-6/12  '>
+                                    <div className= 'bg-red-600 text-white rounded-full '>Save</div>
                             </div>
 
                             <div className='modal_foot'>
                                     <div className='destination'>
-                                            <div className='pin_mock_icon_container'>
-                                                    <box-icon name='right-top-arrow-circle' className="pin_mock_icon"></box-icon>
+                                            <div className='pin_mock_icon_container absolute bottom-1 w-6/12 bg-gray-200 rounded-md'>
+                                                <box-icon name='right-top-arrow-circle'  className="pin_mock_icon right-2"></box-icon>
                                             </div>
-                                            <span>{props.pinDetails.destination}</span>
                                     </div>
 
-                                    <div className='pin_mock_icon_container'>
-                                                <box-icon type='solid' name='share-alt' className="pin_mock_icon"></box-icon>
-                                            </div>
-
-                                            <div className='pin_mock_icon_container'>
+                                            <div className='pin_mock_icon_container absolute bottom-1 right-1 bg-gray-200 rounded-lg'>
                                                     <box-icon name='dots-horizontal-rounded' className="pin_mock_icon"></box-icon>
                                             </div>
-                            </div>
-                    </div>
-
-                <div className='pin_image'></div>
-                                <img onLoad={check_size} src={props.pinDetails.img_blob} alt='pin_image'></img>
+                                            <div className='pin_image rounded-lg max-w-full max-h-full'></div>
+                                                         <img  src={props.pinDetails.img_blob} alt='pin_image rounded-full'></img>
+                                </div>
+                        </div>
                 </div>
+
+            
 //     </div>
   )
 }

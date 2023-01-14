@@ -34,15 +34,15 @@ import Pin from './Pin.js';
   render() {
             return (
             <div>
-                    <div className='navigation-bar w-full h-4 fixed top-0'>
+                    <div className='navigation-bar w-full h-4 fixed top-0 right-0'>
                             <div onClick={() => this.setState({ show_modal:true})}>
-                            <div className=' pint_mock_container add_pin flex justify-end w-20px h-60px p-10'>
                                     <box-icon name='plus-circle'></box-icon>
                             </div>
-                            </div>
+                            <div className='title color text-white bg-red-400 text-center text-lg'>Click arrow to begin!</div>
                     </div>
+                  
 
-                    <div className='pin_container m-20 absolute grid grid-cols-5 gap-y-5 gap-x-10  grid-row-10  justify-center '>
+                    <div className='pin_container m-20 absolute grid grid-cols-5 gap-1 grid-rows-4  justify-center '>
                         {this.state.pins}
                     </div>
 
