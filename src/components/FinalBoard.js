@@ -34,7 +34,7 @@ import Pin from './Pin.js';
   render() {
             return (
             <div>
-                    <div className='navigation-bar w-full h-4 fixed top-0 right-0'>
+                    <div className='navigation-bar w-full h-4 align-right '>
                             <div onClick={() => this.setState({ show_modal:true})}>
                                     <box-icon name='plus-circle'></box-icon>
                             </div>
@@ -47,7 +47,7 @@ import Pin from './Pin.js';
                     </div>
 
                     <div onClick={event => event.target.className === 'add_pin_modal' ? this.setState({show_modal :false}) : null } 
-                        className='add_pin_modal_container  bg-gray-200'>
+                        className='add_pin_modal_container  bg-gray-200 '>
                          {
                             this.state.show_modal ?
                                 <Modal add_pin={this.add_pin} /> : null

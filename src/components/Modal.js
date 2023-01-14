@@ -77,8 +77,8 @@ function Modal(props) {
 
   return (
         <div className='add_pin_modal absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-9999  w-3/4 '>
-        <div className='pin-modal-container object-center relative container mx-auto  bg-white w-10/12 h-full border-8 rounded' id="">
-                <div className=' grid grid-cols-2  h-96 '>
+        <div className='pin-modal-container object-center relative container mx-auto  bg-white w-10/12 h-screen border-8 rounded' id="">
+                <div className=' grid grid-cols-1 gap-4 sm:grid sm:grid-cols-2  h-96  '>
 
                         <div className='relative' id='left'>
                                 <div className='section1'>
@@ -116,7 +116,7 @@ function Modal(props) {
 
                         <div className='relative' id='right'>
                                         <div className='section1'>
-                                                <div className='select_size bg-gray-100  flex absolute top-1 right-1'>
+                                                <div className='select_size  bg-gray-100  flex absolute top-1 right-1'>
                                                         <select defaultValue="Select" className="pin_size m-20px p-0 relative  overflow-hidden bg-gray-100 w-44 h-7 rounded'">
                                                                 <option value="">Select</option>
                                                                 <option value="small w-6/12 h-4/5" id='pin_size'>Small</option>
