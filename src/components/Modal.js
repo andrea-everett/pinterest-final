@@ -119,9 +119,9 @@ function Modal(props) {
                                                 <div className='select_size  bg-gray-100  flex absolute  top-1 right-1'>
                                                         <select defaultValue="Select" className="pin_size m-20px p-0 relative  overflow-hidden bg-gray-100 w-44 h-7 rounded'">
                                                                 <option value="">Select</option>
-                                                                <option value="small w-6/12 h-4/5" id='pin_size'>Small</option>
-                                                                <option value="medium  w-6/12 h-5/6  rounded">Medium</option>
-                                                                <option value="large  w-6/12 h-55 rounded">Large</option>
+                                                                <option value="small w-6/12 h-5/6" id='pin_size'>Small</option>
+                                                                <option value="medium  w-6/12 h-full  rounded">Medium</option>
+                                                                <option value="large  w-6/12 h-full rounded">Large</option>
                                                                 </select>
                                                                 <div onClick={()=> save_pin(pinDetails, props.add_pin)} className='"save_pin" bg-red-500 text-center w-16 rounded text-white' id="save_pin">Save</div>
                                                 </div>

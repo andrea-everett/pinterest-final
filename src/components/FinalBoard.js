@@ -42,7 +42,7 @@ import Pin from './Pin.js';
                     </div>
                   
 
-                    <div className='pin_container m-20 absolute grid grid-cols-5 gap-1 grid-rows-4  justify-center '>
+                    <div className='pin_container m-20 absolute grid grid-cols-2 gap 1 grid-rows-4 gap-1 sm:grid sm:grid-cols-5 sm:gap-1 sm:grid-rows-4  justify-center '>
                         {this.state.pins}
                     </div>
 
