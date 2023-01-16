@@ -79,7 +79,7 @@ function Modal(props) {
         <div className='add_pin_modal absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-9999  w-3/4 '>
         <div className='pin-modal-container object-center relative container mx-auto  bg-white w-10/12 h-screen border-8  sm:h-5/6 rounded' id="">
                 <div className=' grid grid-cols-1 gap-7  sm:grid sm:grid-cols-2  h-3/4 sm:h-96 '>
-
+                
                         <div className='relative' id='left'>
                                 <div className='section1'>
                                         <div className='mock-icon-container'>
@@ -119,9 +119,9 @@ function Modal(props) {
                                                 <div className='select_size  bg-gray-100  flex absolute  top-1 right-1'>
                                                         <select defaultValue="Select" className="pin_size m-20px p-0 relative  overflow-hidden bg-gray-100 w-44 h-7 rounded'">
                                                                 <option value="">Select</option>
-                                                                <option value="small w-6/12 h-5/6" id='pin_size'>Small</option>
-                                                                <option value="medium  w-6/12 h-full  rounded">Medium</option>
-                                                                <option value="large  w-6/12 h-full rounded">Large</option>
+                                                                <option value="small h-8" id='pin_size'>Small</option>
+                                                                <option value="medium  h-10">Medium</option>
+                                                                <option value="large h-11 ">Large</option>
                                                                 </select>
                                                                 <div onClick={()=> save_pin(pinDetails, props.add_pin)} className='"save_pin" bg-red-500 text-center w-16 rounded text-white' id="save_pin">Save</div>
                                                 </div>

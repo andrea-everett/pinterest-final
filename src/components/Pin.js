@@ -40,11 +40,11 @@ function Pin(props) {
                                             </div>
                                     </div>
 
-                                            <div className='pin_mock_icon_container absolute bottom-1 right-1 bg-gray-200 rounded-lg'>
-                                                    <box-icon name='dots-horizontal-rounded' className="pin_mock_icon"></box-icon>
-                                            </div>
-                                            <div className='pin_image rounded-lg max-w-full max-h-full'></div>
-                                                         <img  src={props.pinDetails.img_blob} alt='pin_image rounded-full'></img>
+                                        <div className='pin_mock_icon_container absolute bottom-1 right-1 bg-gray-200 rounded-lg'>
+                                                <box-icon name='dots-horizontal-rounded' className="pin_mock_icon"></box-icon>
+                                        </div>
+                                        <div className='pin_image '></div>
+                                                <img  src={props.pinDetails.img_blob} alt='pin_image rounded-full'></img>
                                 </div>
                         </div>
                 </div>
