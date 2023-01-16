@@ -4,6 +4,9 @@ import 'boxicons';
 import Modal from './Modal.js';
 import Pin from './Pin.js';
 
+const hideBackground = () => {
+    console.log('hide background');
+}
 
  class ModalAndPin extends React.Component {
         constructor(props) {
@@ -56,9 +59,8 @@ import Pin from './Pin.js';
                                     <div className='profile-img '><img src="../images/profile-pic.jpg" ></img></div>
                           
                                     <div onClick={() => this.setState({ show_modal:true})}>
-                                            <div className='plus text-right mr-12 sm:p-2'><box-icon name='plus-circle'></box-icon></div>
+                                            <div onClick={hideBackground} className='plus text-right mr-12 sm:p-2'><box-icon name='plus-circle'></box-icon></div>
                                      </div>
-                                     {/* <div onClick={() => this.setState({pinterest_feed:false})}></div> */}
                                 </div>
                             </div>
                             
