@@ -77,7 +77,7 @@ function Modal(props) {
 
   return (
         <div className='add_pin_modal absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-9999  w-3/4 '>
-        <div className='pin-modal-container object-center relative container mx-auto  bg-white w-10/12 h-screen border-8  sm:h-max rounded-lg' id="">
+        <div className='pin-modal-container object-center relative container mx-auto  bg-white  h-screen border-8  sm:h-max rounded-lg' id="">
                 <div className=' grid grid-cols-1 gap-7  sm:grid sm:grid-cols-2  h-3/4 sm:h-96 '>
                 
                         <div className='relative' id='left'>

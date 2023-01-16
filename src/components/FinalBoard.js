@@ -36,8 +36,8 @@ import Pin from './Pin.js';
             <div>
                 <div className='pinterest_feed'>
               
-                            <div className='navigation-bar flex gap-x-8 m-10 text-lg'>
-                                    <div className='pinterest p-2 '>
+                            <div className='navigation-bar sm:flex sm:gap-x-8 sm:m-10 sm:text-lg'>
+                                    <div className='pinterest sm:p-2 '>
                                         <box-icon name='pinterest' type='logo' color='#f90707' ></box-icon>
                                     </div>
                                     <div className='button bg-black rounded-full text-white p-2'>Home</div>
@@ -47,17 +47,18 @@ import Pin from './Pin.js';
                                     <div className='search-bar bg-gray-200 w-9/12 rounded-lg p-2'>
                                         <box-icon name='search-alt-2'></box-icon>Search
                                     </div>
-                                    <div className='bell p-2'>
+                                    <div className='bell sm:p-2'>
                                         <box-icon type='solid' name='bell' color='#928e8e'></box-icon>
                                     </div>
-                                    <div className='message p-2'>
+                                    <div className='message sm:p-2'>
                                         <box-icon name='message-rounded-dots' type='solid' color='#928e8e' ></box-icon>
                                     </div>
-                                    <div className='profile-img'><img src="../images/profile-pic.jpg" ></img></div>
+                                    <div className='profile-img '><img src="../images/profile-pic.jpg" ></img></div>
                           
                                     <div onClick={() => this.setState({ show_modal:true})}>
-                                            <div className='plus p-2'><box-icon name='plus-circle'></box-icon></div>
-                                        </div>
+                                            <div className='plus text-right mr-12 sm:p-2'><box-icon name='plus-circle'></box-icon></div>
+                                     </div>
+                                     {/* <div onClick={() => this.setState({pinterest_feed:false})}></div> */}
                                 </div>
                             </div>
                             
