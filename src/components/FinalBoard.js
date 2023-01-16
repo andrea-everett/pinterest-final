@@ -34,20 +34,27 @@ import Pin from './Pin.js';
   render() {
             return (
             <div>
-                <div className='pinterest_feed relative'>
-                    <div className='navigation-bar h-4 absolute top-3 left-3 '>
-                            <div onClick={() => this.setState({ show_modal:true})}>
-                                    <box-icon name='plus-circle'></box-icon>
+                <div className='pinterest_feed'>
+              
+                            <div className='navigation-bar flex gap-x-8 m-10 text-lg'>
+                                    <div className='pinterest p-2 '><box-icon name='pinterest' type='logo' color='#f90707' ></box-icon></div>
+                                    <div className='button bg-black rounded-full text-white p-2'>Home</div>
+                                    <div className='button p-2'>Today</div>
+                                    <div className='button p-2'>Create</div>
+                                    <div className='search-bar bg-gray-200 w-9/12 rounded-lg p-2'><box-icon name='search-alt-2'></box-icon>Search</div>
+                                    <div className='bell p-2'><box-icon type='solid' name='bell' color='#928e8e'></box-icon></div>
+                                    <div className='message p-2'><box-icon name='message-rounded-dots' type='solid' color='#928e8e' ></box-icon></div>
+                                    <div className='profile-img'><img src="../images/profile-pic.jpg" ></img></div>
+                          
+                                    <div onClick={() => this.setState({ show_modal:true})}>
+                                            <div className='plus p-2'><box-icon name='plus-circle'></box-icon></div>
+                                        </div>
+                                </div>
                             </div>
                             
-                            <div className='pinterest_logo '>
-                                    <div className='pinterest relative top-3  '><box-icon name='pinterest' type='logo' color='#f90707' ></box-icon></div>
-                            </div>
-                            {/* <div className='title color text-white bg-red-500 text-center text-lg relative top-20 left-30'>Click arrow to begin!</div> */}
-                    </div>
-                </div>
+                            <div className='arrow text-right mr-12'><box-icon name='up-arrow-alt' color='#f10606' ></box-icon></div>
+                            <div className='begin text-md text-right p-2 bg-red-500 w-25 text-white'>Click arrow to begin!</div>
                   
-                {/* <div className='pin_container m-20 absolute grid grid-cols-2 gap  gap-1 h-500 w-200  sm:grid sm:grid-cols-5 sm:gap-1 sm:grid-rows-3 sm:h-screen justify-center '> */}
                     <div className='pin_container m-20 absolute flex flex-wrap justify-between gap-x-5 gap-y-5 h-screen '>
                         {this.state.pins}
                     </div>
