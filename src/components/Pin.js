@@ -29,14 +29,14 @@ function Pin(props) {
                     <div className='pin_title hidden'>{props.pinDetails.title}</div>
 
                     <div className='pin_modal relative rounded-lg'>
-                            <div className='hover:modal_head absolute right-1 top-1 text-center w-6/12  '>
+                            <div className='hover:modal_head absolute right-1 top-1 text-center w-3/12  '>
                                     <div className= 'bg-red-600 text-white rounded-full '>Save</div>
                             </div>
 
                             <div className='modal_foot'>
                                     <div className='destination'>
-                                            <div className='pin_mock_icon_container absolute bottom-1 w-6/12 bg-gray-200 rounded-md'>
-                                                <box-icon name='right-top-arrow-circle'  className="pin_mock_icon right-2"></box-icon>
+                                            <div className='pin_mock_icon_container absolute bottom-1 w-3/12 bg-gray-200 rounded-md'>
+                                                <box-icon name='right-top-arrow-circle'  className="pin_mock_icon p-1"></box-icon>
                                             </div>
                                     </div>
 

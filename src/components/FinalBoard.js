@@ -37,13 +37,22 @@ import Pin from './Pin.js';
                 <div className='pinterest_feed'>
               
                             <div className='navigation-bar flex gap-x-8 m-10 text-lg'>
-                                    <div className='pinterest p-2 '><box-icon name='pinterest' type='logo' color='#f90707' ></box-icon></div>
+                                    <div className='pinterest p-2 '>
+                                        <box-icon name='pinterest' type='logo' color='#f90707' ></box-icon>
+                                    </div>
                                     <div className='button bg-black rounded-full text-white p-2'>Home</div>
                                     <div className='button p-2'>Today</div>
                                     <div className='button p-2'>Create</div>
-                                    <div className='search-bar bg-gray-200 w-9/12 rounded-lg p-2'><box-icon name='search-alt-2'></box-icon>Search</div>
-                                    <div className='bell p-2'><box-icon type='solid' name='bell' color='#928e8e'></box-icon></div>
-                                    <div className='message p-2'><box-icon name='message-rounded-dots' type='solid' color='#928e8e' ></box-icon></div>
+
+                                    <div className='search-bar bg-gray-200 w-9/12 rounded-lg p-2'>
+                                        <box-icon name='search-alt-2'></box-icon>Search
+                                    </div>
+                                    <div className='bell p-2'>
+                                        <box-icon type='solid' name='bell' color='#928e8e'></box-icon>
+                                    </div>
+                                    <div className='message p-2'>
+                                        <box-icon name='message-rounded-dots' type='solid' color='#928e8e' ></box-icon>
+                                    </div>
                                     <div className='profile-img'><img src="../images/profile-pic.jpg" ></img></div>
                           
                                     <div onClick={() => this.setState({ show_modal:true})}>
