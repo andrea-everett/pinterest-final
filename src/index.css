@@ -5,10 +5,27 @@
 @layer base {
   img {
     @apply rounded-lg;
-    @apply  max-w-full sm:max-w-full;
+    @apply max-w-full sm:max-w-full;
     @apply h-full;
   }
-  /* input {
-    @apply w-full;
-  } */
+}
+
+@layer utilities {
+  @variants responsive {
+    .pin_container {
+      column-gap: 1.5em;
+      column-count: 1;
+    }
+    .pin_container-sm {
+      column-gap: 1.5em;
+      column-count: 2em;
+    }
+    .pin_container-md {
+      column-gap: 1.5em;
+      column-count: 3;
+    }
+    .break-inside {
+      break-inside: 0.5em;
+    }
+  }
 }

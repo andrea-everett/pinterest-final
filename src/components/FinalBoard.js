@@ -87,7 +87,7 @@ class ModalAndPin extends React.Component {
             </div>
           ) : null}
   
-          <div className="pin_container m-20 absolute flex flex-wrap justify-between gap-x-5 gap-y-5 h-screen ">
+          <div className="pin_container  m-5 gap-x-2  sm:pin_container-sm md:pin_container-md absolute" >
             {this.state.pins}
           </div>
   

@@ -36,6 +36,8 @@ function check_size(event) {
         image.style.opacity = 1;
 }
 
+
+
 function save_pin(pinDetails, add_pin) {
         const users_data = {
                 ...pinDetails,
@@ -105,11 +107,11 @@ function Modal(props) {
                         <div className='relative' id='right'>
                                         <div className='section1'>
                                                 <div className='select_size  bg-gray-100  flex absolute  top-1 right-1'>
-                                                        <select defaultValue="Select" className="pin_size m-20px p-0 relative  overflow-hidden bg-gray-100 w-3/5 h-7 rounded'">
+                                                        <select defaultValue="Select" className="pin_size  p-0 relative  overflow-hidden bg-gray-100 w-3/5 h-7 rounded'">
                                                                 <option value="">Select</option>
-                                                                <option value="small h-8" id='pin_size'>Small</option>
-                                                                <option value="medium  h-10">Medium</option>
-                                                                <option value="large h-11 ">Large</option>
+                                                                <option value="small  " id='pin_size'>Small</option>
+                                                                <option value="medium " id='pin_size'>Medium</option>
+                                                                <option value="large " id='pin_size'>Large</option>
                                                                 </select>
                                                                 <div onClick={()=> save_pin(pinDetails, props.add_pin)} className='"save_pin" bg-red-500 text-center w-16 rounded text-white' id="save_pin">Save</div>
                                                 </div>
