@@ -63,7 +63,7 @@ class ModalAndPin extends React.Component {
                   ></box-icon>
                 </div>
                 <div className="profile-img ">
-                  <img src="../images/profile-pic.jpg"></img>
+                  <img src="../images/profile-pic.jpg" alt=""></img>
                 </div>
               </div>
             </nav>

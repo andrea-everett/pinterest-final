@@ -6,7 +6,6 @@
   img {
     @apply rounded-lg;
     @apply max-w-full sm:max-w-full;
-    @apply h-full;
   }
 }
 

@@ -68,7 +68,7 @@ function Modal(props) {
   return (
         <div className='add_pin_modal absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-9999  w-3/4 '>
         <div className='pin-modal-container object-center relative container mx-auto  bg-white  h-screen m-20  border-8  sm:h-3/5 sm:w-3/4  rounded-lg' id="">
-                <div className=' grid grid-cols-1 gap-7  sm:grid sm:grid-cols-2  h-3/4 sm:h-96'>
+                <div className=' grid grid-cols-1 gap-7  m-10 sm:grid sm:grid-cols-2  h-3/4 sm:h-96'>
                 
                         <div className='relative' id='left'>
                                 <div className='section1'>
@@ -107,11 +107,11 @@ function Modal(props) {
                         <div className='relative' id='right'>
                                         <div className='section1'>
                                                 <div className='select_size  bg-gray-100  flex absolute  top-1 right-1'>
-                                                        <select defaultValue="Select" className="pin_size  p-0 relative  overflow-hidden bg-gray-100 w-3/5 h-7 rounded'">
+                                                        <select defaultValue="Select" className="pin_size m-0 p-0 relative  overflow-hidden bg-gray-100 w-3/5 h-7 rounded'">
                                                                 <option value="">Select</option>
-                                                                <option value="small  " id='pin_size'>Small</option>
-                                                                <option value="medium " id='pin_size'>Medium</option>
-                                                                <option value="large " id='pin_size'>Large</option>
+                                                                <option value="small h-1/2" id='pin_size'>Small</option>
+                                                                <option value="medium h-1/4" id='pin_size'>Medium</option>
+                                                                <option value="large h-1/2" id='pin_size'>Large</option>
                                                                 </select>
                                                                 <div onClick={()=> save_pin(pinDetails, props.add_pin)} className='"save_pin" bg-red-500 text-center w-16 rounded text-white' id="save_pin">Save</div>
                                                 </div>
