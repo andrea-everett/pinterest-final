@@ -95,7 +95,7 @@ function Modal(props) {
                                         </label>
 
                                         <div className={`modals_pin w-full h-full ${showModalPin ? 'block' :  'hidden'}`}>
-                                                <img  className='rounded-lg object-cover w-full h-full object-center 'onLoad={check_size} src={pinDetails.img_blob} alt='pin_image' id='pin_image'></img>
+                                                <img  className='rounded-lg object-cover w-full h-full object-center m-5px 'onLoad={check_size} src={pinDetails.img_blob} alt='pin_image' id='pin_image'></img>
                                         </div>
                                 </div>
 

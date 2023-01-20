@@ -36,7 +36,41 @@ class ModalAndPin extends React.Component {
         <div>
           {this.state.isBackgroundVisible ? (
             <nav className="pinterest_feed">
-              <div className="navigation-bar sm:flex sm:gap-x-8 sm:m-10 sm:text-lg">
+                <div className='navigation-bar-mobile mt-5 flex justify-center gap-x-3 hover:underline-offset-2 hover:underline decoration-white text-white'>
+                        <button>Browse</button>
+                        <button>Watch</button>
+                    </div>
+                <div className='floating-menu'>
+                        <div className='flex flex-col'>
+                            <div className=' bg-black fixed left-0 bottom-0 w-full space-x-7  text-center p-5'>
+
+                                <button className='btn w-12' title='Home'>
+                                        <box-icon name='home-alt' color='#f9f5f5' ></box-icon>
+                                </button>
+
+                                <button className='btn w-12' title='Home'>
+                                         <box-icon name='search-alt-2' color='#f9f5f5' ></box-icon>
+                                </button>
+
+                                {/* <button className='btn w-12' title='Home'>
+                                        <div onClick={this.hideBackground}
+                                        className="plus bg-white w-10   rounded-full  mr-12 sm:p-2" >
+                                        <box-icon name="plus-circle"></box-icon>
+                               </div>
+                                </button> */}
+
+                                <button className='btn w-12' title='Home'>
+                                        <box-icon name='message-rounded-dots' color='#f9f5f5' ></box-icon>
+                                </button>
+
+                                <button className='btn w-12' title='Home'>
+                                        <img src="/components/images.profile-pic.jpg"></img>
+                                </button>
+                        </div>
+
+                </div>
+                </div>
+              <div className="navigation-bar hidden sm:flex sm:gap-x-8 sm:m-10 sm:text-lg">
                 <div className="pinterest sm:p-2 ">
                   <box-icon
                     name="pinterest"
@@ -69,9 +103,8 @@ class ModalAndPin extends React.Component {
             </nav>
           ) : null}
   <div onClick={() => this.setState({ show_modal: true })}>
-            <div
-              onClick={this.hideBackground}
-              className="plus text-right mr-12 sm:p-2"
+            <div onClick={this.hideBackground}
+              className="plus  text-right mr-10  bg-white  sm:mr-12 sm:p-2"
             >
               <box-icon name="plus-circle"></box-icon>
             </div>
@@ -81,7 +114,7 @@ class ModalAndPin extends React.Component {
               <div className="arrow text-right mr-12">
                 <box-icon name="up-arrow-alt" color="#f10606"></box-icon>
               </div>
-              <div className="begin text-md text-right p-2 bg-red-500 w-25 text-white">
+              <div className="begin ml-8  sm:text-md sm:text-right p-2sm: bg-red-500 sm:w-25 sm:text-white">
                 Click arrow to begin!
               </div>
             </div>

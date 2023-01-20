@@ -3,28 +3,36 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    background-color: black;
+  }
   img {
     @apply rounded-lg;
     @apply max-w-full sm:max-w-full;
+  }
+  input  {
+    font-size: 75%;
+    width: 100%;
   }
 }
 
 @layer utilities {
   @variants responsive {
     .pin_container {
-      column-gap: 1.5em;
-      column-count: 1;
+      gap: 10px;
+      margin: 10px;
+      column-count: 2;
     }
     .pin_container-sm {
-      column-gap: 1.5em;
+      gap: 10px;
       column-count: 2em;
     }
     .pin_container-md {
-      column-gap: 1.5em;
+      gap: 10px;
       column-count: 3;
     }
     .break-inside {
-      break-inside: 0.5em;
+      break-inside: 1.5em;
     }
   }
 }
