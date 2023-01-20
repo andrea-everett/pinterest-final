@@ -5,7 +5,10 @@
 @layer base {
   img {
     @apply rounded-lg;
-    @apply  max-w-full sm:max-w-xs;
+    @apply  max-w-full sm:max-w-full;
     @apply h-full;
   }
+  /* input {
+    @apply w-full;
+  } */
 }

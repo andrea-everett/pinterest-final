@@ -56,7 +56,7 @@ const hideBackground = () => {
                                     <div className='message sm:p-2'>
                                         <box-icon name='message-rounded-dots' type='solid' color='#928e8e' ></box-icon>
                                     </div>
-                                    <div className='profile-img '><img src="../images/profile-pic.jpg" ></img></div>
+                                    <div className='profile-img '><img src="../profile-pic.jpg" ></img></div>
                           
                                     <div onClick={() => this.setState({ show_modal:true})}>
                                             <div onClick={hideBackground} className='plus text-right mr-12 sm:p-2'><box-icon name='plus-circle'></box-icon></div>
@@ -67,7 +67,7 @@ const hideBackground = () => {
                             <div className='arrow text-right mr-12'><box-icon name='up-arrow-alt' color='#f10606' ></box-icon></div>
                             <div className='begin text-md text-right p-2 bg-red-500 w-25 text-white'>Click arrow to begin!</div>
                   
-                    <div className='pin_container m-20 absolute flex flex-wrap justify-between gap-x-5 gap-y-5 h-screen '>
+                    <div className='pin_container m-10 absolute flex flex-wrap justify-between gap-x-4 gap-y-5 h-screen '>
                         {this.state.pins}
                     </div>
 
