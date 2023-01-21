@@ -4,15 +4,15 @@
 
 @layer base {
   body {
-    background-color: black;
+    @apply bg-black sm:bg-white;
   }
   img {
     @apply rounded-lg;
     @apply max-w-full sm:max-w-full;
   }
   input  {
-    font-size: 75%;
-    width: 100%;
+    @apply text-sm sm:text-lg;
+    @apply w-full sm:w-full;
   }
 }
 
