@@ -121,10 +121,13 @@ class ModalAndPin extends React.Component {
                 </div>
              ) : null}
   
-          <div className="pin_container  m-5 gap-x-2  sm:pin_container-sm md:pin_container-md absolute" >
+          <div className="pin_container  flex flex-col-2  sm:pin_container-sm" >
             {this.state.pins}
           </div>
   
+        <div className='pin_container container'>
+          
+        </div>
           <div
             onClick={(event) =>
               event.target.className === "add_pin_modal"

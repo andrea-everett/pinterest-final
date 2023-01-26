@@ -1,8 +1,7 @@
 // import React, { Component } from 'react';
-// // import axios from 'axios';
+// import axios from 'axios';
 
-// // import Gallery from './components/Gallery';
-
+// import Gallery from './components/Gallery';
 
 //   class App extends React.Component {
 //     constructor(props) {

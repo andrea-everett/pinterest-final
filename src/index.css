@@ -9,8 +9,9 @@
   img {
     @apply rounded-lg;
     @apply max-w-full sm:max-w-full;
+    @apply h-4/5;
   }
-  input  {
+  input {
     @apply text-sm sm:text-lg;
     @apply w-full sm:w-full;
   }
