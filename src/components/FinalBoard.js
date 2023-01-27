@@ -121,7 +121,7 @@ class ModalAndPin extends React.Component {
                 </div>
              ) : null}
   
-          <div className="pin_container  flex flex-col-2  sm:pin_container-sm" >
+          <div className="pin_container  grid grid-cols-2 sm:pin_container-sm" >
             {this.state.pins}
           </div>
   
