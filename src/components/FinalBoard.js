@@ -1,7 +1,7 @@
 import React from 'react';
 import 'boxicons';
 
-import Modal from './Modal.js';
+import Modal from './Article.js';
 import Pin from './Pin.js';
 import HomeLayout from '../App';
 
@@ -65,7 +65,7 @@ class ModalAndPin extends React.Component {
                                 </button>
 
                                 <button className='btn w-12' title='Home'>
-                                        <img src="/components/images.profile-pic.jpg"></img>
+                                        <img src="/components/images/profile-pic.jpg"></img>
                                 </button>
                         </div>
 
@@ -101,7 +101,7 @@ class ModalAndPin extends React.Component {
 
                 <div onClick={() => this.setState({ show_modal: true })}>
                     <div onClick={this.hideBackground}
-                            className="plus  text-right m-10 sm:mr-1 sm:p-3" >
+                            className="plus  text-right mr-10 sm:mr-1 sm:p-3" >
                             <box-icon name="plus-circle"   color="#928e8e"></box-icon>
                     </div>
                 </div>

@@ -45,13 +45,22 @@
 // import  Modal  from './components/Modal';
 // import ModalAndPin from './components/ModalAndPin.js';
 import FinalBoard from './components/FinalBoard.js'
+import GetImages from './components/GetImages.js';
 // import HomeLayout from './components/HomeLayout.js';
+// import { Browsers, Routes, Route, BrowserRouter } from "react-router-dom";
 
 
 function App() {
   return (
-        <FinalBoard/>
-  );
-}
+      <>
+
+            {/* <Routes> */}
+                {/* <Route path="/" element={<GetImages />}></Route> */}
+                {/* <Route path=" /:username" element={<Profile/>}></Route> */}
+        
+        <GetImages />
+        </>
+      );
+  }
 
 export default App;
