@@ -121,7 +121,7 @@ class ModalAndPin extends React.Component {
                 </div>
              ) : null}
   
-          <div className="pin_container justify-center grid grid-cols-2 sm:pin_container-sm" >
+          <div className="pin_container justify-center grid grid-cols-2 sm:pin_container-sm sm:grid-cols-4" >
             {this.state.pins}
           </div>
   

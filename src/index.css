@@ -10,7 +10,7 @@
   img {
     @apply rounded-lg;
     @apply place-content-center;
-    @apply items-center;
+    @apply items-start;
     @apply justify-center;
     @apply w-5/6;
   }
