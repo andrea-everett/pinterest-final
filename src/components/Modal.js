@@ -78,17 +78,17 @@ function Modal(props) {
                                 </div>
 
                                 <div className='section2 absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-100 w-3/4 h-3/4  text-center text-black rounded-lg'>
-                                        <label htmlFor='upload_img' id="upload_img_label" 
+                                        <label htmlFor='upload_img p-1 ' id="upload_img_label" 
                                                         style={{
                                                                 display: showLabel ? 'block' : 'none'
                                                         }}>
                                                     <div className='upload_img_container absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 '>
                                                             <div id='dotted_border'>
-                                                                <div className='pint_mock_icon_container'>
-                                                                         <box-icon name='up-arrow-circle'></box-icon>
+                                                                <div className='pint_mock_icon_container text-xs'>
+                                                                         <box-icon name='up-arrow-circle' size='sm'></box-icon>
                                                                 </div>
-                                                                <div className='w-full h-full'>Click to upload</div>
-                                                                <div className='w-full'>Recommendation: Use high-quality .jpg</div>
+                                                                <div className='w-full  text-sm sm:text-md h-full'>Click to upload</div>
+                                                                <div className='w-full text-sm sm:text-md'>Recommendation: Use high-quality .jpg</div>
                                                             </div>
                                                          </div>
                                                     <input onChange={event => upload_img(event, pinDetails, setPinDetails, setShowLabel, setShowModalPin)} type="file" name="upload_img " id="upload_img" />

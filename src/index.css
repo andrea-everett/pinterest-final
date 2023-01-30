@@ -5,11 +5,14 @@
 @layer base {
   body {
     @apply bg-black sm:bg-white;
+    @apply m-0;
   }
   img {
     @apply rounded-lg;
-    @apply w-11/12 sm:max-w-full;
-    @apply h-4/5;
+    @apply place-content-center;
+    @apply items-center;
+    @apply justify-center;
+    @apply w-5/6;
   }
   input {
     @apply text-sm sm:text-lg;
@@ -21,8 +24,9 @@
   @variants responsive {
     .pin_container {
       gap: 10px;
-      margin: 10px;
+      justify-content: center;
       column-count: 2;
+      margin: 10px;
     }
     .pin_container-sm {
       gap: 10px;

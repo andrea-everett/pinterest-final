@@ -46,9 +46,13 @@ function Pin(props) {
                                                         <img  src={props.pinDetails.img_blob} alt='pin_image rounded-full'></img>
                                         </div>   
                                         </div>
-                                        <div className='pin_title flex gap-x-44 text-white pt-2 sm:text-black bottom text-lg'>{props.pinDetails.title}
-                                                <box-icon name='dots-horizontal-rounded' className="pin_mock_icon" color="white"></box-icon>
+
+                                        <div className='pin_title_container  flex place-items-end'>
+                                                <div className='pin_title justify-end text-white pt-2 sm:text-black bottom text-lg'>{props.pinDetails.title}
+                                                </div>
+                                                {/* <box-icon name='dots-horizontal-rounded' className="pin_mock_icon items-end" color="white"></box-icon> */}
                                         </div>
+                                      
                                         <div className='pin_description flex  text-white sm:text-black bottom text-sm'>{props.pinDetails.description}
                                         </div>
                                 </div>
