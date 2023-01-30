@@ -101,7 +101,7 @@ class ModalAndPin extends React.Component {
 
                 <div onClick={() => this.setState({ show_modal: true })}>
                     <div onClick={this.hideBackground}
-                            className="plus  text-right mr-10 sm:mr-1 sm:p-3" >
+                            className="plus  text-right m-10 sm:mr-1 sm:p-3" >
                             <box-icon name="plus-circle"   color="#928e8e"></box-icon>
                     </div>
                 </div>
