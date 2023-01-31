@@ -52,14 +52,7 @@ import GetImages from './components/GetImages.js';
 
 function App() {
   return (
-      <>
-
-            {/* <Routes> */}
-                {/* <Route path="/" element={<GetImages />}></Route> */}
-                {/* <Route path=" /:username" element={<Profile/>}></Route> */}
-        
-        <GetImages />
-        </>
+    <FinalBoard />
       );
   }
 

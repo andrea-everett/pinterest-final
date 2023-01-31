@@ -1,7 +1,7 @@
 import React from 'react';
 import 'boxicons';
 
-import Modal from './Article.js';
+import Modal from './Modal.js';
 import Pin from './Pin.js';
 import HomeLayout from '../App';
 
