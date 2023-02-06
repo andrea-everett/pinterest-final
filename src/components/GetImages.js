@@ -3,11 +3,11 @@ import axios from 'axios';
 import Article from "./Article.js";
 import Image from './Image.js';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import ModalAndPin from "./FinalBoard.js";
+import FinalBoard from "./FinalBoard.js";
 
 export default  function GetImages () {
     const [images, setImages, person] = useState([]);
-
+    const [isBackgroundVisible, setBackgroundVisible] =useState(true);
 
     useEffect(() =>{
         fetchImages()
@@ -17,12 +17,17 @@ export default  function GetImages () {
         axios.get(`https://api.unsplash.com/photos/?page=20&client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`)
         .then((res) =>setImages([...images, ...res.data])) }
         
+        const hideBackground = () => {
+            setBackgroundVisible(false);
+        };
+
         return (
             <>
-                <ModalAndPin ></ModalAndPin>
+                <FinalBoard hideBackground={hideBackground} isBackgroundVisible={isBackgroundVisible}/>
                 <div className="">
                 <InfiniteScroll dataLength={images.length} next={fetchImages} hasMore={true} loader={<h3 style={{color:"black", margin:"20px 0px"}}>Loading...</h3>}>
 
+                {isBackgroundVisible ? 
                 <div className="columns-2 gap-x-1 mx-12 text-center md:columns-5 md:gap-x-3 md:gap-y-1 ">
                         {images.map(image => 
                                 <Image key={image.id} 
@@ -32,6 +37,8 @@ export default  function GetImages () {
                                 // profileImage={user.name.profile_image} 
                          />)}
                 </div>
+                : null } 
+                
                 {/* <div>
                     <className="w-20 rounded-full"></=>
                 </div> */}

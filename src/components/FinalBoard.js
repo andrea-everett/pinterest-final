@@ -4,22 +4,15 @@ import 'boxicons';
 import Modal from './Modal.js';
 import Pin from './Pin.js';
 
-
-
-class ModalAndPin extends React.Component {
+class FinalBoard extends React.Component {
     constructor(props) {
       super(props);
   
       this.state = {
         pins: [],
         show_modal: false,
-        isBackgroundVisible: true,
       };
     }
-  
-    hideBackground = () => {
-      this.setState({ isBackgroundVisible: false });
-    };
   
     add_pin = (pinDetails) => {
       this.setState((_state) => {
@@ -35,7 +28,7 @@ class ModalAndPin extends React.Component {
   render() {
       return (
         <div>
-          {this.state.isBackgroundVisible ? (
+          {this.props.isBackgroundVisible ? (
             <nav className="pinterest_feed">
                 <div className='navigation-bar-mobile mt-5 flex justify-center gap-x-3 hover:underline-offset-2 hover:underline decoration-white text-white sm:hidden'>
                         <button>Browse</button>
@@ -98,13 +91,13 @@ class ModalAndPin extends React.Component {
             ) : null}
 
                 <div onClick={() => this.setState({ show_modal: true })}>
-                    <div onClick={this.hideBackground}
+                    <div onClick={this.props.hideBackground}
                             className="plus  text-right mr-10 sm:mr-1 sm:p-3" >
                             <box-icon name="plus-circle"   color="#928e8e"></box-icon>
                     </div>
                 </div>
         
-                {this.state.isBackgroundVisible ? (
+                {this.props.isBackgroundVisible ? (
                       <div>
                       <div className="arrow text-right mr-12">
                           <box-icon name="up-arrow-alt" color="#f10606"></box-icon>
@@ -133,4 +126,4 @@ class ModalAndPin extends React.Component {
       }
   }
   
-  export default ModalAndPin;
+  export default FinalBoard;

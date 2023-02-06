@@ -36,8 +36,6 @@ function check_size(event) {
         image.style.opacity = 1;
 }
 
-
-
 function save_pin(pinDetails, add_pin) {
         const users_data = {
                 ...pinDetails,
@@ -113,7 +111,7 @@ function Modal(props) {
                                                                 <option value="medium h-1/4" id='pin_size'>Medium</option>
                                                                 <option value="large h-1/2" id='pin_size'>Large</option>
                                                                 </select>
-                                                                <div onClick={()=> save_pin(pinDetails, props.add_pin)} className='"save_pin" bg-red-500 text-center w-16 rounded text-white' id="save_pin">Save</div>
+                                                        <div onClick={()=> save_pin(pinDetails, props.add_pin)} className='"save_pin" bg-red-500 text-center w-16 rounded text-white' id="save_pin">Save</div>
                                                 </div>
                                         </div>
 
@@ -133,14 +131,10 @@ function Modal(props) {
                                                                   <br></br><input placeholder='Add a destination link' type="text" className='text-m border-b-3 w-fit pb-7' id="pin_destination" />
                                                         </label>
                                                 </div>
-                
-                                <div className='section3'>
-
-                                </div>
+                                   </div>
                         </div>
                 </div>
         </div>
-</div>
   )
 }
 
