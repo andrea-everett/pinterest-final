@@ -3,7 +3,7 @@ import 'boxicons';
 
 import Modal from './Modal.js';
 import Pin from './Pin.js';
-import HomeLayout from '../App';
+
 
 
 class ModalAndPin extends React.Component {
@@ -68,36 +68,34 @@ class ModalAndPin extends React.Component {
                                         <img src="/components/images/profile-pic.jpg"></img>
                                 </button>
                         </div>
-
-                </div>
+                 </div>
                 </div>
               <div className="navigation-bar hidden sm:flex sm:gap-x-8 sm:m-10 sm:text-lg sm:align-center">
-                <div className="pinterest sm:p-2 ">
-                  <box-icon name="pinterest"
-                    type="logo"
-                    color="#f90707"
-                    size="md"
-                  ></box-icon>
-                </div>
-                <div className="button bg-black rounded-full w-24 h-12 text-white text-center align-bottom p-2">
-                  Home
-                </div>
-                <div className="button p-2">Today</div>
-                <div className="button p-2">Create</div>
-                <div className="search-bar bg-gray-200 w-9/12 rounded-full flex gap-x-2 p-3">
-                  <box-icon name="search-alt-2"></box-icon>
-                        <p>Search</p>
-                </div>
-                <div className="bell sm:p-3">
-                  <box-icon type="solid" name="bell" color="#928e8e" size="sm"></box-icon>
-                </div>
-                <div className="message sm:p-3" size="sm">
-                  <box-icon name="message-rounded-dots"type="solid"color="#928e8e"></box-icon>
-                </div>
-                </div>
-            </nav>
-          ) : null}
-
+                  <div className="pinterest sm:p-2 ">
+                    <box-icon name="pinterest"
+                      type="logo"
+                      color="#f90707"
+                      size="md"
+                    ></box-icon>
+                  </div>
+                  <div className="button bg-black rounded-full w-24 h-12 text-white text-center align-bottom p-2">
+                    Home
+                  </div>
+                  <div className="button p-2">Today</div>
+                  <div className="button p-2">Create</div>
+                  <div className="search-bar bg-gray-200 w-9/12 rounded-full flex gap-x-2 p-3">
+                    <box-icon name="search-alt-2"></box-icon>
+                          <p>Search</p>
+                  </div>
+                  <div className="bell sm:p-3">
+                    <box-icon type="solid" name="bell" color="#928e8e" size="sm"></box-icon>
+                  </div>
+                  <div className="message sm:p-3" size="sm">
+                    <box-icon name="message-rounded-dots"type="solid"color="#928e8e"></box-icon>
+                  </div>
+                  </div>
+              </nav>
+            ) : null}
 
                 <div onClick={() => this.setState({ show_modal: true })}>
                     <div onClick={this.hideBackground}
@@ -105,38 +103,30 @@ class ModalAndPin extends React.Component {
                             <box-icon name="plus-circle"   color="#928e8e"></box-icon>
                     </div>
                 </div>
-                {/* <div className="profile-img ">
-                  <img src="../images/profile-pic.jpg" alt=""></img>
-                </div> */}
-       
-            
-          {this.state.isBackgroundVisible ? (
-                <div>
-                <div className="arrow text-right mr-12">
-                    <box-icon name="up-arrow-alt" color="#f10606"></box-icon>
-                </div>
-                <div className="begin ml-8  sm:text-md sm:text-right p-2sm: bg-red-500 sm:w-25 sm:text-white sm:p-3">
-                    Click arrow to begin!
-                </div>
-                </div>
-             ) : null}
+        
+                {this.state.isBackgroundVisible ? (
+                      <div>
+                      <div className="arrow text-right mr-12">
+                          <box-icon name="up-arrow-alt" color="#f10606"></box-icon>
+                      </div>
+                      <div className="begin ml-8  sm:text-md sm:text-right p-2sm: bg-red-500 sm:w-25 sm:text-white sm:p-3">
+                          Click arrow to begin!
+                      </div>
+                      </div>
+                  ) : null}
   
-          <div className="pin_container justify-center grid grid-cols-2 sm:pin_container-sm sm:grid-cols-4" >
-            {this.state.pins}
-          </div>
-  
-        <div className='pin_container container'>
-          
-        </div>
-          <div
-            onClick={(event) =>
-              event.target.className === "add_pin_modal"
-                ? this.setState({ show_modal: false })
-                : null
-                }
-                className="add_pin_modal_container  bg-gray-200 "
-            >
-                {this.state.show_modal ? <Modal add_pin={this.add_pin} /> : null}
+              <div className="pin_container justify-center grid grid-cols-2 sm:pin_container-sm sm:grid-cols-4" >
+                {this.state.pins}
+              </div>
+            <div
+              onClick={(event) =>
+                event.target.className === "add_pin_modal"
+                  ? this.setState({ show_modal: false })
+                  : null
+                  }
+                  className="add_pin_modal_container  bg-gray-200 "
+              >
+                  {this.state.show_modal ? <Modal add_pin={this.add_pin} /> : null}
             </div>
             </div>
           );

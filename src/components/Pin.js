@@ -1,23 +1,21 @@
 import React from 'react';
-
 import 'boxicons';
 
+// function check_size(event) {
+//         const image = event.target;
 
-function check_size(event) {
-        const image = event.target;
+//         image.classList.add('pin_max_width');
 
-        image.classList.add('pin_max_width');
+//         if (
+//                 image.getBoundingClientRect().width < image.parentElement.getBoundingClientRect().width ||
+//                 image.getBoundingClientRect().width < image.parentElement.getBoundingClientRect().height
+//         ) {
+//                 image.classList.remove('pin_max_width');
+//                 image.classList.add('pin_max_height');
+//         }
 
-        if (
-                image.getBoundingClientRect().width < image.parentElement.getBoundingClientRect().width ||
-                image.getBoundingClientRect().width < image.parentElement.getBoundingClientRect().height
-        ) {
-                image.classList.remove('pin_max_width');
-                image.classList.add('pin_max_height');
-        }
-
-        image.style.opacity = 1;
-}
+//         image.style.opacity = 1;
+// }
 
 function Pin(props) {
 // const [pinImage, setPinImage] = useState();
