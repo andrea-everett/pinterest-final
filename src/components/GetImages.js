@@ -18,7 +18,7 @@ export default  function GetImages () {
         .then((res) =>setImages([...images, ...res.data])) }
         
         const hideBackground = () => {
-            setBackgroundVisible(false);
+            setBackgroundVisible(prevState => !prevState);
         };
 
         return (

@@ -1,35 +1,25 @@
-import React from 'react';
-import 'boxicons';
+import React, { useState } from 'react'
 
-import Modal from './Modal.js';
-import Pin from './Pin.js';
+const useToggle = (initialState) => {
+    const [toggleValue, setToggleValue] = useState(initialState);
 
-class FinalBoard extends React.Component {
-    constructor(props) {
-      super(props);
-  
-      this.state = {
-        pins: [],
-        show_modal: false,
-      };
-    }
-  
-    add_pin = (pinDetails) => {
-      this.setState((_state) => {
-        const new_pins = [..._state.pins];
-  
-        new_pins.push(<Pin pinDetails={pinDetails} key={_state.pins.length} />);
-        return {
-          pins: new_pins,
-          show_modal: false,
-        };
-      });
-    };
-  render() {
-      return (
-        <div>
-          {this.props.isBackgroundVisible ? (
-            <nav className="pinterest_feed">
+    const toggler = () => { setToggleValue(!toggleValue) };
+    return [toggleValue, toggler]
+
+    const [toggle, setToggle] = useToggle();
+  };
+
+  return (
+    <div>
+      <button 
+            onClick={setToggle} 
+            class="btn btn-secondary mb-5">
+          Toggle State
+      </button>
+
+      {toggle && (
+       
+        <nav className="pinterest_feed">
                 <div className='navigation-bar-mobile mt-5 flex justify-center gap-x-3 hover:underline-offset-2 hover:underline decoration-white text-white sm:hidden'>
                         <button>Browse</button>
                         <button>Watch</button>
@@ -63,24 +53,24 @@ class FinalBoard extends React.Component {
                         </div>
                  </div>
                 </div>
-              <div className="navigation-bar hidden sm:flex sm:gap-x-8 sm:m-10 sm:text-lg align-center">
-                  <div className="pinterest align-center sm:p-2 ">
+              <div className="navigation-bar hidden sm:flex sm:gap-x-8 sm:m-10 sm:text-lg sm:align-center">
+                  <div className="pinterest sm:p-2 ">
                     <box-icon name="pinterest"
                       type="logo"
                       color="#f90707"
                       size="md"
                     ></box-icon>
                   </div>
-                  <div className="button bg-black rounded-full w-24 h-12 text-white text-center align-center p-2">
+                  <div className="button bg-black rounded-full w-24 h-12 text-white text-center align-bottom p-2">
                     Home
                   </div>
                   <div className="button p-2">Today</div>
                   <div className="button p-2">Create</div>
-                  <div className="search-bar bg-gray-200 w-9/12 rounded-full flex gap-x-2 p-3 align-center">
+                  <div className="search-bar bg-gray-200 w-9/12 rounded-full flex gap-x-2 p-3">
                     <box-icon name="search-alt-2"></box-icon>
                           <p>Search</p>
                   </div>
-                  <div className="bell align-center sm:p-3">
+                  <div className="bell sm:p-3">
                     <box-icon type="solid" name="bell" color="#928e8e" size="sm"></box-icon>
                   </div>
                   <div className="message sm:p-3" size="sm">
@@ -90,16 +80,13 @@ class FinalBoard extends React.Component {
               </nav>
             ) : null}
 
-                <div onClick={() => {
-                      this.setState(prevState => ({ show_modal: !prevState.show_modal }))
-                      this.props.hideBackground()}
-                    }>
-                  <div className="plus  text-right mr-15 sm:mr-8 sm:p-3" >
-                        <box-icon name="plus-circle"   color="#928e8e"></box-icon>
+                <button onClick={() => this.setState({ show_modal: true })}>
+                    <div onClick={this.props.hideBackground}
+                            className="plus  text-right mr-10 sm:mr-1 sm:p-3" >
+                            <box-icon name="plus-circle"   color="#928e8e"></box-icon>
                     </div>
-                </div>
-        
-                {this.props.isBackgroundVisible ? (
+                </button>
+                
                       <div>
                       <div className="arrow text-right mr-12">
                           <box-icon name="up-arrow-alt" color="#f10606"></box-icon>
@@ -108,7 +95,7 @@ class FinalBoard extends React.Component {
                           Click arrow to begin!
                       </div>
                       </div>
-                  ) : null}
+        
   
               <div className="pin_container justify-center grid grid-cols-2 sm:pin_container-sm sm:grid-cols-4" >
                 {this.state.pins}
@@ -121,11 +108,8 @@ class FinalBoard extends React.Component {
                   }
                   className="add_pin_modal_container  bg-gray-200 "
               >
-                  {this.state.show_modal ? <Modal add_pin={this.add_pin} /> : null}
             </div>
             </div>
           );
-      }
-  }
-  
-  export default FinalBoard;
+    </div>
+  )
