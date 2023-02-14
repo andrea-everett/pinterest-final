@@ -3,6 +3,7 @@ import 'boxicons';
 
 import Modal from './Modal.js';
 import Pin from './Pin.js';
+import { useHistory } from 'react-router-dom'
 
 class FinalBoard extends React.Component {
     constructor(props) {
@@ -25,6 +26,7 @@ class FinalBoard extends React.Component {
         };
       });
     };
+
   render() {
       return (
         <div>
@@ -75,7 +77,9 @@ class FinalBoard extends React.Component {
                     Home
                   </div>
                   <div className="button p-2">Today</div>
-                  <div className="button p-2">Create</div>
+                  
+                    {/* <button><Link to='/Create.js' target='_blank'> Click Me  </Link></button> */}
+      
                   <div className="search-bar bg-gray-200 w-9/12 rounded-full flex gap-x-2 p-3 align-center">
                     <box-icon name="search-alt-2"></box-icon>
                           <p>Search</p>
@@ -104,7 +108,7 @@ class FinalBoard extends React.Component {
                       <div className="arrow text-right mr-12">
                           <box-icon name="up-arrow-alt" color="#f10606"></box-icon>
                       </div>
-                      <div className="begin ml-8  sm:text-md sm:text-right p-2sm: bg-red-500 sm:w-25 sm:text-white sm:p-3">
+                      <div className="begin m-6  sm:text-md sm:text-right p-2sm: bg-red-500 sm:w-25 sm:text-white sm:p-3">
                           Click arrow to begin!
                       </div>
                       </div>

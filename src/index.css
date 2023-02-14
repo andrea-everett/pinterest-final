@@ -11,6 +11,8 @@
 img {
 @apply block;
 @apply rounded-lg;
+@apply w-full;
+@apply m-0;
 }
 
   input {
@@ -19,24 +21,5 @@ img {
   }
 }
 
-@layer utilities {
-  @variants responsive {
-    .pin_container {
-      gap: 10px;
-      justify-content: center;
-      column-count: 2;
-      margin: 10px;
-    }
-    .pin_container-sm {
-      gap: 10px;
-      column-count: 2em;
-    }
-    .pin_container-md {
-      gap: 10px;
-      column-count: 3;
-    }
-    .break-inside {
-      break-inside: 1.5em;
-    }
-  }
-}
+ 
+

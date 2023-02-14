@@ -14,7 +14,7 @@ export default  function GetImages () {
     }, [])
 
     const fetchImages = () => {
-        axios.get(`https://api.unsplash.com/photos/?page=20&client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`)
+        axios.get(`https://api.unsplash.com/photos/?page=30&per_page=50&client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`)
         .then((res) =>setImages([...images, ...res.data])) }
         
         const hideBackground = () => {
@@ -25,10 +25,10 @@ export default  function GetImages () {
             <>
                 <FinalBoard hideBackground={hideBackground} isBackgroundVisible={isBackgroundVisible}/>
                 <div className="">
-                <InfiniteScroll dataLength={images.length} next={fetchImages} hasMore={true} loader={<h3 style={{color:"black", margin:"20px 0px"}}>Loading...</h3>}>
+                <InfiniteScroll dataLength={images.length} next={fetchImages} hasMore={true} loader={<h3 style={{color:"black", margin:"20px 0px"}}></h3>}>
 
                 {isBackgroundVisible ? 
-                <div className="columns-2 gap-x-1 mx-12 text-center md:columns-5 md:gap-x-3 md:gap-y-1 ">
+                <div className="overflow-hidden columns-2 gap-x-0 mx-12 text-center md:columns-6">
                         {images.map(image => 
                                 <Image key={image.id} 
                                 fullImageUrl={image.urls.full} 
