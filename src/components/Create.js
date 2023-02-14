@@ -1,11 +1,9 @@
 import React from 'react';
 
- function Create() {
+import React from 'react'
+
+export default function Create() {
   return (
-    <div>Create</div>
-  
+    <div className='create'>Create</div>
   )
 }
-
-
-export default Create;

@@ -3,7 +3,10 @@ import 'boxicons';
 
 import Modal from './Modal.js';
 import Pin from './Pin.js';
-import { useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import {
+  BrowserRouter as Router
+} from 'react-router-dom';
 
 class FinalBoard extends React.Component {
     constructor(props) {
@@ -14,7 +17,7 @@ class FinalBoard extends React.Component {
         show_modal: false,
       };
     }
-  
+
     add_pin = (pinDetails) => {
       this.setState((_state) => {
         const new_pins = [..._state.pins];
@@ -29,6 +32,7 @@ class FinalBoard extends React.Component {
 
   render() {
       return (
+        <Router>
         <div>
           {this.props.isBackgroundVisible ? (
             <nav className="pinterest_feed">
@@ -77,8 +81,10 @@ class FinalBoard extends React.Component {
                     Home
                   </div>
                   <div className="button p-2">Today</div>
+
+                  <Link to="/" component={Create} />
+
                   
-                    {/* <button><Link to='/Create.js' target='_blank'> Click Me  </Link></button> */}
       
                   <div className="search-bar bg-gray-200 w-9/12 rounded-full flex gap-x-2 p-3 align-center">
                     <box-icon name="search-alt-2"></box-icon>
@@ -128,7 +134,8 @@ class FinalBoard extends React.Component {
                   {this.state.show_modal ? <Modal add_pin={this.add_pin} /> : null}
             </div>
             </div>
-          );
+            </Router>
+          ); 
       }
   }
   
