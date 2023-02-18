@@ -3,7 +3,7 @@ import axios from 'axios';
 import Article from "./Article.js";
 import Image from './Image.js';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import FinalBoard from "./FinalBoard.js";
+import AddPin from "./add-pin.js";
 
 export default  function GetImages () {
     const [images, setImages, person] = useState([]);
@@ -23,7 +23,7 @@ export default  function GetImages () {
 
         return (
             <>
-                <FinalBoard hideBackground={hideBackground} isBackgroundVisible={isBackgroundVisible}/>
+                <AddPin hideBackground={hideBackground} isBackgroundVisible={isBackgroundVisible}/>
                 <div className="">
                 <InfiniteScroll dataLength={images.length} next={fetchImages} hasMore={true} loader={<h3 style={{color:"black", margin:"20px 0px"}}></h3>}>
 

@@ -1,10 +1,9 @@
 import React from 'react';
-import 'boxicons';
 
 import Modal from './Modal.js';
 import Pin from './Pin.js';
 
-class FinalBoard extends React.Component {
+class AddPin extends React.Component {
     constructor(props) {
       super(props);
   
@@ -68,4 +67,4 @@ class FinalBoard extends React.Component {
       }
   }
   
-  export default FinalBoard;
+  export default AddPin;
