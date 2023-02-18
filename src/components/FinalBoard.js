@@ -1,7 +1,7 @@
 import React from 'react';
 import 'boxicons';
 
-import Modal from './Modal.js';
+import Modal from './AddPin.js';
 import Pin from './Pin.js';
 
 class FinalBoard extends React.Component {
@@ -34,7 +34,7 @@ class FinalBoard extends React.Component {
                       this.props.hideBackground()}
                     }>
                   <div className="plus  text-right mr-15 sm:mr-8 sm:p-3" >
-                        <box-icon name="plus-circle"   color="#928e8e"></box-icon>
+                      
                     </div>
                 </div>
         

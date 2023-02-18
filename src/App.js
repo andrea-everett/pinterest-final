@@ -10,7 +10,7 @@ function App() {
       <Router>
           <TheHeader />
             <Switch>
-              <Route path="/add-pin.js">
+              <Route path="/AddPin.js">
 
               </Route>
                 

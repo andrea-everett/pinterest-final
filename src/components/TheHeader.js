@@ -44,7 +44,7 @@ class TheHeader extends React.Component {
                       Home
                     </NavLink>
                     <NavLink to="/today" className="button p-2">Today</NavLink>
-                    <NavLink className="button p-2" to="/add-pin">Create</NavLink>
+                    <NavLink className="button p-2" to="/AddPin">Create</NavLink> <box-icon name="plus-circle"   color="#928e8e"></box-icon>
         
                     <div className="search-bar bg-gray-200 w-9/12 rounded-full flex gap-x-2 p-3 align-center">
                       <box-icon name="search-alt-2"></box-icon>
