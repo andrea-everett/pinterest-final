@@ -1,21 +1,21 @@
  import React from 'react';
- import TheHeader from './components/TheHeader.js';
-import GetImages from './components/GetImages.js';
+import Header from './components/TheHeader.js';
+import Home from './components/Home.js';
+import Modal from './components/Create.js';
 
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 function App() {
     return (
       <Router>
-          <TheHeader />
+          <Header />
             <Switch>
-              <Route path="/AddPin.js">
-
-              </Route>
+           
+              <Route path="/Create.js" component={Modal}/>
                 
               <Route path="/">
-                <GetImages/>
+                <Home/>
               </Route>
           </Switch>
       </Router>

@@ -1,12 +1,9 @@
 import {useState, useEffect} from "react";
 import axios from 'axios';
-import Article from "./Article.js";
 import Image from './Image.js';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import AddPin from "./AddPin.js";
-import FinalBoard from "./FinalBoard.js";
 
-export default  function GetImages () {
+export default  function Home() {
     const [images, setImages, person] = useState([]);
     const [isBackgroundVisible, setBackgroundVisible] =useState(true);
 
@@ -24,8 +21,7 @@ export default  function GetImages () {
 
         return (
             <>
-                <FinalBoard hideBackground={hideBackground} isBackgroundVisible={isBackgroundVisible}/>
-                <div className="">
+             <div className="">
                 <InfiniteScroll dataLength={images.length} next={fetchImages} hasMore={true} loader={<h3 style={{color:"black", margin:"20px 0px"}}></h3>}>
 
                 {isBackgroundVisible ? 
