@@ -1,15 +1,25 @@
  import React from 'react';
-// import  Modal  from './components/Modal';
-// import ModalAndPin from './components/ModalAndPin.js';
-// import FinalBoard from './components/FinalBoard.js'
+ import TheHeader from './components/TheHeader.js';
 import GetImages from './components/GetImages.js';
-// import { Browsers, Routes, Route, BrowserRouter } from "react-router-dom";
+
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 
 function App() {
     return (
-      <GetImages/>
-        );
-    }
+      <Router>
+          <TheHeader />
+            <Switch>
+              <Route path="/AddPin.js">
+
+              </Route>
+                
+              <Route path="/">
+                <GetImages/>
+              </Route>
+          </Switch>
+      </Router>
+      );
+}
 
 export default App;
