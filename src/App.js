@@ -11,12 +11,10 @@ function App() {
       <Router>
           <Header />
             <Switch>
-           
-              <Route path="/Create.js" component={Modal}/>
-                
-              <Route path="/">
-                <Home/>
-              </Route>
+
+              <Route exact path="/"><Home></Home></Route>
+              <Route exact path="/Create"><Modal/> </Route> 
+              
           </Switch>
       </Router>
       );
