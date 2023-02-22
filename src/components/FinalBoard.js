@@ -31,41 +31,13 @@ class FinalBoard extends React.Component {
   render() {
       return (
         <div>
-                <div onClick={() => {
-                      this.setState(prevState => ({ show_modal: !prevState.show_modal }))
-                      this.props.hideBackground()}
-                    }>
-                  <div className="plus  text-right mr-15 sm:mr-8 sm:p-3" >
-                      
-                    </div>
-                </div>
-        
-                {this.props.isBackgroundVisible ? (
-                      <div>
-                      <div className="arrow text-right mr-12">
-                          <box-icon name="up-arrow-alt" color="#f10606"></box-icon>
-                      </div>
-                      <div className="begin m-6  sm:text-md sm:text-right p-2sm: bg-red-500 sm:w-25 sm:text-white sm:p-3">
-                          Click arrow to begin!
-                      </div>
-                      </div>
-                  ) : null}
-  
+              <div className="plus  text-right mr-15 sm:mr-8 sm:p-3"></div>
               <div className="pin_container justify-center grid grid-cols-2 sm:pin_container-sm sm:grid-cols-4" >
-                {this.state.pins}
-              </div>
-            <div
-              onClick={(event) =>
-                event.target.className === "add_pin_modal"
-                  ? this.setState({ show_modal: false })
-                  : null
-                  }
-                  className="add_pin_modal_container  bg-gray-200 "
-              >
-                  {this.state.show_modal ? <Modal add_pin={this.add_pin} /> : null}
+              
+            <div className="add_pin_modal_container  bg-gray-200 ">
+                  <Modal add_pin={this.add_pin} /> 
             </div>
-            </div>
-
+          
           ); 
       }
   }
