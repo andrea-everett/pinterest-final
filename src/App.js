@@ -1,23 +1,47 @@
- import React from 'react';
+// import React, { Fragment } from "react";
+// import Header from './components/TheHeader.js';
+// import Home from './components/Home.js';
+// import Modal from './components/Create.js';
+
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+
+// function App() {
+//     return (
+//       <Fragment>
+//       <Router>
+//           <Header />
+//             <Switch>
+
+//               <Route path="/create"><Modal/> </Route> 
+              
+//               <Route path="/"><Home/></Route>
+
+//           </Switch>
+//       </Router>
+//     </Fragment>
+//       );
+// }
+
+// export default App;
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from './components/TheHeader.js';
 import Home from './components/Home.js';
 import Modal from './components/Create.js';
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-
 function App() {
-    return (
-      <Router>
-          <Header />
-            <Switch>
+  return (
+    <Router>
+      <Header></Header>
 
-              <Route exact path="/"><Home></Home></Route>
-              <Route exact path="/Create"><Modal/> </Route> 
+      <Switch>
+      <Route path="/create"><Modal/> </Route> 
               
-          </Switch>
-      </Router>
-      );
+      <Route path="/"><Home/></Route>
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;

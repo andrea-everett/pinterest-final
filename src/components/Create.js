@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import "../index.css";
 import 'boxicons';
 
-
 function upload_img(event, pinDetails, setPinDetails, setShowLabel, setShowModalPin) {
         if (event.target.files && event.target.files[0]) {
                 if (/image\/*/.test(event.target.files[0].type)) {
@@ -141,5 +140,10 @@ function Modal(props) {
   )
 }
 
+// function Modal(props) {
+//         return(
+//                 <h1>testing</h1>
+//         )
+// }
 
 export default Modal;
