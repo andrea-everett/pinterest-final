@@ -1,7 +1,7 @@
 import React from 'react';
 import 'boxicons';
 
-import Modal from './AddPin.js';
+import Modal from './Create.js';
 import Pin from './Pin.js';
 
 class FinalBoard extends React.Component {
@@ -26,18 +26,20 @@ class FinalBoard extends React.Component {
       });
     };
 
-  render() {
+    render() {
       return (
         <div>
-              <div className="plus  text-right mr-15 sm:mr-8 sm:p-3"></div>
+              <div className="plus  text-right mr-15 sm:mr-8 sm:p-3">
               <div className="pin_container justify-center grid grid-cols-2 sm:pin_container-sm sm:grid-cols-4" >
-              
-            <div className="add_pin_modal_container  bg-gray-200 ">
+          </div> 
+          <div className="add_pin_modal_container  bg-gray-200 ">
                   <Modal add_pin={this.add_pin} /> 
-            </div>
-          
+           </div>
+          </div>
+        </div>
           ); 
       }
-  }
+}
   
   export default FinalBoard;
+  

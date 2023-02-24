@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { useHistory } from "react-router-dom";
+import FinalBoard from './FinalBoard';
 import "../index.css";
 import 'boxicons';
 
