@@ -1,7 +1,7 @@
 import React from 'react';
 import 'boxicons';
 
-import Modal from './Create.js';
+import Modal from './Modal.js';
 import Pin from './Pin.js';
 
 class FinalBoard extends React.Component {
@@ -16,9 +16,9 @@ class FinalBoard extends React.Component {
 
     add_pin = (pinDetails) => {
       this.setState((_state) => {
-        const new_pins = [..._state.pins];
+        const new_pins = [..._state.pins]
   
-        new_pins.push(<Pin pinDetails={pinDetails} key={_state.pins.length} />);
+        new_pins.push(<Pin pinDetails={pinDetails} key={_state.pins.length} />)
         return {
           pins: new_pins,
           show_modal: false,

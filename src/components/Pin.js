@@ -54,7 +54,7 @@ function Pin(props) {
                                         </div>
                                 </div>
                         </div>
-                        </div>
+                    </div>
                  )
         }
 

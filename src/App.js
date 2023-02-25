@@ -25,10 +25,10 @@
 
 // export default App;
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from './components/TheHeader.js';
 import Home from './components/Home.js';
-import Modal from './components/Create.js';
+import Modal from './components/Modal.js';
 
 function App() {
   return (
