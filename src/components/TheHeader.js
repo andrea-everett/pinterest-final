@@ -44,7 +44,7 @@ class TheHeader extends React.Component {
                     <NavLink to="/" className="button bg-black rounded-full w-24 h-12 text-white text-center align-center p-2">
                       Home
                     </NavLink>
-                    <NavLink to="/today" className="button p-2">Today</NavLink>
+                    <NavLink to="/today" className="align-center p-2 hover:bg-black hover:rounded-full hover:text-white text-center w-24 h-12">Today</NavLink>
                     <NavLink to="/create" className="align-center p-2 hover:bg-black hover:rounded-full hover:text-white text-center w-24 h-12">Create</NavLink>
                     <div className="search-bar bg-gray-200 w-9/12 rounded-full flex gap-x-3 p-3 align-center">
                       <box-icon name="search-alt-2" size="sm" color="grey"></box-icon>
