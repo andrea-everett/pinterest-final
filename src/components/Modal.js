@@ -1,5 +1,4 @@
 import React, { useState} from 'react';
-import { useHistory } from "react-router-dom";
 import "../index.css";
 import 'boxicons';
 
@@ -62,7 +61,7 @@ function Modal(props) {
                 pin_size: '',
         })
         const [showLabel, setShowLabel] = useState(true);
-        const [showModalPin, setShowModalPin] = useState(true);
+        const [showModalPin, setShowModalPin] = useState(false);
 
   return (
         

@@ -18,10 +18,9 @@ import 'boxicons';
 // }
 
 function Pin(props) {
-// const [pinImage, setPinImage] = useState();
+
   return (
-//     <div>
-//             <input onChange={event => upload_img(event, setPinImage)} type="file" name='picture' id="picture"></input>    
+    <div>
         <div className={`${props.pinDetails.pin_size}`} >             
                     <div className='pin_modal rounded-lg grid'>
                             <div className='modal_head  right-1 top-1 text-center w-3/12  '>
@@ -55,6 +54,7 @@ function Pin(props) {
                                         </div>
                                 </div>
                         </div>
+                    </div>
                  )
         }
 
