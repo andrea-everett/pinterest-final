@@ -1,7 +1,9 @@
 import React from 'react';
 import 'boxicons';
 
+
 import Modal from './Modal.js';
+
 import Pin from './Pin.js';
 
 class FinalBoard extends React.Component {
