@@ -8,7 +8,5 @@ const FinalBoard = ({pins, add_pin}) => {
        Pins Go Here
     </div>
   )
-}
 
-
-export default FinalBoard;
+  export default FinalBoard
