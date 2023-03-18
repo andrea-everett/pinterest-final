@@ -5,7 +5,6 @@
 
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-
 // function App() {
 //     return (
 //       <Fragment>
@@ -13,8 +12,8 @@
 //           <Header />
 //             <Switch>
 
-//               <Route path="/create"><Modal/> </Route> 
-              
+//               <Route path="/create"><Modal/> </Route>
+
 //               <Route path="/"><Home/></Route>
 
 //           </Switch>
@@ -24,30 +23,35 @@
 // }
 
 // export default App;
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from './components/TheHeader.js';
-import Home from './components/Home.js';
-import Today from './components/Today.js';
-import FinalBoard from "./components/FinalBoard.js";
+import Header from "./components/TheHeader.js";
+import Home from "./pages/Home.js";
+import Today from "./pages/Today.js";
+import FinalBoard from "./pages/Create.js";
 
 function App() {
-  const [pins, setPins] =useState([])
- 
-  const add_pin = pinDetails => {
-    setPins(() =>  [...pins, pinDetails]);
-}
+  const [pins, setPins] = useState([]);
+
+  const add_pin = (pinDetails) => {
+    setPins(() => [...pins, pinDetails]);
+  };
 
   return (
     <Router>
       <Header></Header>
 
       <Switch>
-      <Route path="/create"><FinalBoard add_pin={add_pin} pins={pins}/> 
-      </Route> 
-      <Route path="/today"><Today/> </Route> 
-              
-      <Route path="/"><Home/></Route>
+        <Route path="/create">
+          <FinalBoard add_pin={add_pin} pins={pins} />
+        </Route>
+        <Route path="/today">
+          <Today />{" "}
+        </Route>
+
+        <Route path="/">
+          <Home />
+        </Route>
       </Switch>
     </Router>
   );

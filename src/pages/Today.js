@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import axios from 'axios';
-import Image from './Image.js';
+import Image from '../components/Image.js';
 
 export default  function Home() {
     const [images, setImages, person] = useState([]);
