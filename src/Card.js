@@ -72,4 +72,4 @@
 //     },
 // }
 
-export default Pin;
+// export default Pin;

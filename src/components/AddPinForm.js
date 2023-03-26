@@ -12,7 +12,7 @@ const initialState = {
   pin_size: "",
 };
 
-function Create(props) {
+function AddPinForm(props) {
   const [pinDetails, setPinDetails] = useState(initialState);
   const [showLabel, setShowLabel] = useState(true);
   const [showModalPin, setShowModalPin] = useState(false);
@@ -105,7 +105,7 @@ function Create(props) {
                     <div className="pint_mock_icon_container text-xs">
                       <box-icon name="up-arrow-circle" size="sm"></box-icon>
                     </div>
-                    <div className="w-full  text-sm sm:text-md h-full">
+                    <div className="w-full text-sm sm:text-md h-full">
                       Click to upload
                     </div>
                     <div className="w-full text-sm sm:text-md">
@@ -235,4 +235,4 @@ function Create(props) {
 //         )
 // }
 
-export default Create;
+export default AddPinForm;
