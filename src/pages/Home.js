@@ -26,7 +26,7 @@ export default function Home() {
         <InfiniteScroll dataLength={images.length} next={fetchImages} hasMore={true} loader={<h3 style={{ color: "black", margin: "20px 0px" }}></h3>}>
 
           {isBackgroundVisible ?
-            <div className="overflow-hidden columns-2 gap-x-0 mx-12 text-center md:columns-6">
+            <div className="justify-center columns-2 gap-x-0 text-white w-full md:text-black text-center md:columns-6">
               {images.map(image =>
                 <Image key={image.id}
                   fullImageUrl={image.urls.full}

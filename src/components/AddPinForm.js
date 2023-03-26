@@ -161,7 +161,7 @@ function AddPinForm(props) {
                   className="pin_size m-0 p-0 relative  overflow-hidden bg-gray-100  rounded'"
                 >
                   <option value="">Select</option>
-                  <option value="small" id="pin_size" className="h-3/4">
+                  <option value="small" id="pin_size" className="w-3/4">
                     Small
                   </option>
                   <option value="medium" id="pin_size" className="h-4/6">

@@ -20,13 +20,13 @@ export default  function Home() {
 
         return (
             <>
-             <div className="absolute text-8xl text-center">
+             <div className="absolute text-white md:text-black text-4xl md:text-8xl text-center">
              <div className="p-10">
                 <h1>Stay Inspired</h1>
              </div>
                 
                 {isBackgroundVisible ? 
-                <div className="relative text-base  items-center  top-1 columns-2 gap-x-0 text-center md:columns-2 w-6/12 m-auto">
+                <div className="relative text-base items-center top-1 columns-2 gap-x-0 text-center md:columns-2 w-full md:w-6/12 m-auto">
                         {images.map(image => 
                                 <Image key={image.id} 
                                 fullImageUrl={image.urls.full} 

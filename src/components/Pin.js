@@ -2,12 +2,11 @@ import React from "react";
 import "boxicons";
 
 function Pin(props) {
-  let gridRow = ''
   return (
-    <a href={props.pinDetails.img_blob} target="_blank" rel="noreferrer" className='inline-block w-5/6 justify-center place-content-center rounded-lg'>
+    <a href={props.pinDetails.img_blob} target="_blank" rel="noreferrer" className='justify-center inline-block w-full md:w-1/5 place-content-center rounded-lg'>
       <img src={props.pinDetails.img_blob} alt='' altprop='' />
-      <div className='text-left pt-1 pb-5'>{props.pinDetails.title}</div>
-      <div className='text-left pt-1 pb-5'>{props.pinDetails.description}</div>
+      <div className='text-left text-lg pt-1 text-white md:text-black'>{props.pinDetails.title}</div>
+      <div className='text-left pt-1 pb-6 text-white md:text-black'>{props.pinDetails.description}</div>
     </a>
   )
 
