@@ -25,10 +25,11 @@
 // export default App;
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/TheHeader.js";
+import TheHeader from "./components/TheHeader.js";
 import Home from "./pages/Home.js";
 import Today from "./pages/Today.js";
 import FinalBoard from "./pages/Create.js";
+
 
 function App() {
   const [pins, setPins] = useState([]);
@@ -39,20 +40,21 @@ function App() {
 
   return (
     <Router>
-      <Header></Header>
+      <TheHeader>
 
-      <Switch>
-        <Route path="/create">
-          <FinalBoard add_pin={add_pin} pins={pins} />
-        </Route>
-        <Route path="/today">
-          <Today />{" "}
-        </Route>
+        <Switch>
+          <Route path="/create">
+            <FinalBoard add_pin={add_pin} pins={pins} />
+          </Route>
+          <Route path="/today">
+            <Today />{" "}
+          </Route>
 
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </TheHeader>
     </Router>
   );
 }

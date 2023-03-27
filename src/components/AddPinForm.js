@@ -158,16 +158,16 @@ function AddPinForm(props) {
                   defaultValue="Select"
                   value={pinDetails.size}
                   onChange={(e) => updatePinDetails({ size: e.target.value })}
-                  className="pin_size m-0 p-0 relative  overflow-hidden bg-gray-100  rounded'"
+                  className="m-0 p-0 relative  overflow-hidden bg-gray-100 rounded"
                 >
                   <option value="">Select</option>
-                  <option value="small" id="pin_size" className="h-3/4">
+                  <option value="small" id="pin_size">
                     Small
                   </option>
-                  <option value="medium" id="pin_size" className="h-4/6">
+                  <option value="medium" id="pin_size">
                     Medium
                   </option>
-                  <option value="large" id="pin_size" className="h-5/6">
+                  <option value="large" id="pin_size">
                     Large
                   </option>
                 </select>

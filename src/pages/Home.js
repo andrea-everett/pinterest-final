@@ -16,32 +16,34 @@ export default function Home() {
       .then((res) => setImages([...images, ...res.data]))
   }
 
-  const hideBackground = () => {
-    setBackgroundVisible(prevState => !prevState);
-  };
+  // const hideBackground = () => {
+  //   setBackgroundVisible(prevState => !prevState);
+  // };
 
   return (
     <>
-      <div className="">
-        <InfiniteScroll dataLength={images.length} next={fetchImages} hasMore={true} loader={<h3 style={{ color: "black", margin: "20px 0px" }}></h3>}>
+      <InfiniteScroll dataLength={images.length} next={fetchImages} hasMore={true} loader={<h3 style={{ color: "black", margin: "20px 0px" }}></h3>}>
+        <div className='navigation-bar-mobile mt-5 mb-10 flex justify-center gap-x-5 hover:underline-offset-2 hover:underline decoration-white text-white sm:hidden'>
+          <button>Browse</button>
+          <button>Watch</button>
+        </div>
+        {isBackgroundVisible ?
+          <div className="justify-center columns-2 gap-x-0 text-white w-full md:text-black text-center md:columns-6">
+            {images.map(image =>
+              <Image key={image.id}
+                fullImageUrl={image.urls.full}
+                imageUrl={image.urls.thumb}
+                userName={image.user.name}
+              // profileImage={user.name.profile_image} 
+              />)}
+          </div>
+          : null}
 
-          {isBackgroundVisible ?
-            <div className="overflow-hidden columns-2 gap-x-0 mx-12 text-center md:columns-6">
-              {images.map(image =>
-                <Image key={image.id}
-                  fullImageUrl={image.urls.full}
-                  imageUrl={image.urls.thumb}
-                  userName={image.user.name}
-                // profileImage={user.name.profile_image} 
-                />)}
-            </div>
-            : null}
-
-          {/* <div>
+        {/* <div>
                     <className="w-20 rounded-full"></=>
                 </div> */}
 
-          {/* <div className="overlay relative">
+        {/* <div className="overlay relative">
                     {person.photos[0].urls.raw && (
                         <img
                         src={person.photos[0].urls.raw}
@@ -53,10 +55,7 @@ export default function Home() {
                         {person.name}
                     </h1>
                 </div> */}
-
-
-        </InfiniteScroll>
-      </div>
+      </InfiniteScroll>
     </>
   )
 }

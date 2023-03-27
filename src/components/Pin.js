@@ -2,12 +2,21 @@ import React from "react";
 import "boxicons";
 
 function Pin(props) {
-  let gridRow = ''
+  let pinStyle = 'justify-center relative w-full place-content-center rounded-lg'
+  let imageHeight = ''
+  if (props.pinDetails.size === "small") {
+    imageHeight = "w-full aspect-video"
+  } else if (props.pinDetails.size === "medium") {
+    imageHeight = "w-full  aspect-square"
+  }
+  else if (props.pinDetails.size === "large") {
+    imageHeight = "w-full aspect-auto"
+  }
   return (
-    <a href={props.pinDetails.img_blob} target="_blank" rel="noreferrer" className='inline-block w-5/6 justify-center place-content-center rounded-lg'>
-      <img src={props.pinDetails.img_blob} alt='' altprop='' />
-      <div className='text-left pt-1 pb-5'>{props.pinDetails.title}</div>
-      <div className='text-left pt-1 pb-5'>{props.pinDetails.description}</div>
+    <a href={props.pinDetails.img_blob} target="_blank" rel="noreferrer" className={pinStyle}>
+      <img src={props.pinDetails.img_blob} className={imageHeight} alt='' altprop='' />
+      <div className='text-left text-lg pt-1 text-white md:text-black'>{props.pinDetails.title}</div>
+      <div className='text-left pt-1 pb-6 text-white md:text-black'>{props.pinDetails.description}</div>
     </a>
   )
 
