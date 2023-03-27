@@ -7,13 +7,9 @@ class TheHeader extends React.Component {
   render() {
     return (
       <nav className="pinterest_feed">
-        <div className='navigation-bar-mobile mt-5 flex justify-center gap-x-3 hover:underline-offset-2 hover:underline decoration-white text-white sm:hidden'>
-          <button>Browse</button>
-          <button>Watch</button>
-        </div>
         <div className='floating-menu'>
-          <div className='flex flex-col'>
-            <div className=' bg-black fixed left-0 bottom-0 w-full space-x-7  text-center p-5 sm:hidden'>
+          <div className='flex flex-col fixed bg-black'>
+            <div className='bg-black fixed z-999 left-0 bottom-0 w-full space-x-20 space-evenly  text-center p-5 sm:hidden'>
 
               <NavLink to="/" className='btn w-12' title='Home'>
                 <box-icon name='home-alt' color='#f9f5f5' ></box-icon>
@@ -41,12 +37,12 @@ class TheHeader extends React.Component {
               size="md"
             ></box-icon>
           </div>
-          <NavLink to="/" className="button bg-black rounded-full w-24 h-12 text-white text-center align-center p-2">
+          <NavLink to="/" className="button hover:bg-black rounded-full w-24 h-12 hover:text-white text:black text-center align-center p-2">
             Home
           </NavLink>
           <NavLink to="/today" className="align-center p-2 hover:bg-black hover:rounded-full hover:text-white text-center w-24 h-12">Today</NavLink>
           <NavLink to="/create" className="align-center p-2 hover:bg-black hover:rounded-full hover:text-white text-center w-24 h-12">Create</NavLink>
-          <div className="search-bar bg-gray-200 w-9/12 rounded-full flex gap-x-3 p-3 align-center">
+          <div className="search-bar bg-gray-200 w-9/12 h-14 rounded-full flex gap-x-3 p-3 align-center">
             <box-icon name="search-alt-2" size="sm" color="grey"></box-icon>
             <p>Search</p>
           </div>
