@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useId } from "react";
 import "../index.css";
 import "boxicons";
 
@@ -59,8 +59,12 @@ function AddPinForm(props) {
     image.style.opacity = 1;
   }
 
+  const newId = useId()
+
   function save_pin(pinDetails, add_pin) {
+    // generate new IDS with https://www.npmjs.com/package/uuid
     const users_data = {
+      id: newId,
       ...pinDetails,
       author: "Jack",
       board: "default",

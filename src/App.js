@@ -31,10 +31,14 @@ import Today from "./pages/Today.js";
 import FinalBoard from "./pages/Create.js";
 
 
+
 function App() {
   const [pins, setPins] = useState([]);
 
+  // useEffect get from db
+
   const add_pin = (pinDetails) => {
+    // post pinDetails to db, use AI localhost:3500/async fetch
     setPins(() => [...pins, pinDetails]);
   };
 
