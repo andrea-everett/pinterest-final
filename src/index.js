@@ -10,7 +10,7 @@
 //   <React.StrictMode>
 //     <App />
 //         <div className='header'>
-            
+
 //         </div>
 //   </React.StrictMode>
 // );
