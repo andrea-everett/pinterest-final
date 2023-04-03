@@ -1,6 +1,8 @@
-import React, { useState, useId } from "react";
+import React, { useState } from "react";
 import "../index.css";
 import "boxicons";
+
+import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
   author: "",
@@ -59,18 +61,21 @@ function AddPinForm(props) {
     image.style.opacity = 1;
   }
 
-  const newId = useId()
 
-  function save_pin(pinDetails, add_pin) {
+
+  async function save_pin(pinDetails, add_pin) {
     // generate new IDS with https://www.npmjs.com/package/uuid
+    const newId = uuidv4()
+    console.log(newId)
     const users_data = {
       id: newId,
       ...pinDetails,
       author: "Jack",
       board: "default",
     };
+
     // console.log(users_data)
-    add_pin(users_data);
+    await add_pin(users_data);
     setPinDetails(initialState);
     setShowLabel(true);
     setShowModalPin(false);
@@ -80,7 +85,12 @@ function AddPinForm(props) {
     setPinDetails((previousState) => {
       return { ...previousState, ...newData };
     });
-  };
+  }
+
+  // repo.create({
+  //   userId,
+  // })
+
 
   return (
     <div className="add_pin_modal">
@@ -232,6 +242,7 @@ function AddPinForm(props) {
     </div>
   );
 }
+
 
 // function Modal(props) {
 //         return(

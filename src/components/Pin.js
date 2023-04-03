@@ -2,22 +2,25 @@ import React from "react";
 import "boxicons";
 
 function Pin(props) {
-  let pinStyle = 'justify-center relative w-full place-content-center rounded-lg'
+  let pinStyle = 'aspect-auto justify-center relative w-full place-content-center rounded-lg mb-4 overflow-y-scroll'
   let imageHeight = ''
   if (props.pinDetails.size === "small") {
-    imageHeight = "w-full aspect-video"
+    imageHeight = "w-full object-cover aspect-video"
   } else if (props.pinDetails.size === "medium") {
-    imageHeight = "w-full  aspect-square"
+    imageHeight = "w-full object-cover aspect-square"
   }
   else if (props.pinDetails.size === "large") {
-    imageHeight = "w-full aspect-auto"
+    imageHeight = "w-full object-cover aspect-auto"
   }
+
   return (
-    <a href={props.pinDetails.img_blob} target="_blank" rel="noreferrer" className={pinStyle}>
-      <img src={props.pinDetails.img_blob} className={imageHeight} alt='' altprop='' />
-      <div className='text-left text-lg pt-1 text-white md:text-black'>{props.pinDetails.title}</div>
-      <div className='text-left pt-1 pb-6 text-white md:text-black'>{props.pinDetails.description}</div>
-    </a>
+    <div className={pinStyle}>
+      <a href={props.pinDetails.img_blob} target="_blank" rel="noreferrer">
+        <img src={props.pinDetails.img_blob} className={imageHeight} alt='' altprop='' />
+        <div className='text-left text-lg pt-1 text-white md:text-black'>{props.pinDetails.title}</div>
+        <div className='text-left pt-1 pb-6 text-white md:text-black'>{props.pinDetails.description}</div>
+      </a>
+    </div>
   )
 
   /* <div className={`${props.pinDetails.pin_size}`}> */

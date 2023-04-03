@@ -23,24 +23,58 @@
 // }
 
 // export default App;
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import TheHeader from "./components/TheHeader.js";
 import Home from "./pages/Home.js";
 import Today from "./pages/Today.js";
-import FinalBoard from "./pages/Create.js";
+import Create from "./pages/Create.js";
 
 
 
 function App() {
   const [pins, setPins] = useState([]);
 
-  // useEffect get from db
+  useEffect(() => {
+    const fetchPins = async () => {
+      const res = await fetch("http://localhost:3500/pins")
+      const json = await res.json()
+      if (res.ok) {
+        setPins(json)
+      }
+    }
+    fetchPins()
+  }, []);
 
-  const add_pin = (pinDetails) => {
-    // post pinDetails to db, use AI localhost:3500/async fetch
+
+  const add_pin = async (pinDetails) => {
+    // post pinDetails to db, use AI localhost:3500/pins fetch
+    const res = await fetch("http://localhost:3500/pins", {
+      method: 'POST',
+      body: JSON.stringify(pinDetails),
+      headers: {
+        "Content-Type": 'application/json'
+      }
+    })
+
+    console.log(res.status)
+
+    // if (res.status !== 404) {
+    //   const data = res.json();
+    //   setPins([...pinDetails, { pinDetails }])
+    // } else {
+    //   setPins([...pinDetails])
+    // }
+
+    // } catch (error) {
+    //   console.log(error.message)
+    //   setLoading(false)
+    // }
+
     setPins(() => [...pins, pinDetails]);
   };
+
 
   return (
     <Router>
@@ -48,7 +82,7 @@ function App() {
 
         <Switch>
           <Route path="/create">
-            <FinalBoard add_pin={add_pin} pins={pins} />
+            <Create add_pin={add_pin} pins={pins} />
           </Route>
           <Route path="/today">
             <Today />{" "}
