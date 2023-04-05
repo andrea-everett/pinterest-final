@@ -1,9 +1,0 @@
-{
-  "environments": {
-    "production": {
-      "deploy": {
-        "startCommand": "echo starting production!"
-      }
-    }
-  }
-}
