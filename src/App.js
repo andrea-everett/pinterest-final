@@ -38,7 +38,7 @@ function App() {
 
   useEffect(() => {
     const fetchPins = async () => {
-      const res = await fetch("http://localhost:3500/pins")
+      const res = await fetch("https://json-server-production-f1f5.up.railway.app")
       const json = await res.json()
       if (res.ok) {
         setPins(json)
