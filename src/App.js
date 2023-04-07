@@ -25,13 +25,13 @@
 // export default App;
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { URL } from "./utilities/serverURL";
 
 import TheHeader from "./components/TheHeader.js";
 import Home from "./pages/Home.js";
 import Today from "./pages/Today.js";
 import Create from "./pages/Create.js";
 
-const URL = 'https://json-server-production-f1f5.up.railway.app'
 
 function App() {
   const [pins, setPins] = useState([]);
