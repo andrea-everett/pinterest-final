@@ -1,8 +1,10 @@
 import React from "react";
 import "boxicons";
+import { URL } from "../utilities/serverURL";
+
 
 function Pin(props) {
-  let pinStyle = 'aspect-auto justify-center relative w-full place-content-center rounded-lg mb-4 overflow-y-scroll'
+  let pinStyle = 'border-solid border-2 border-black-600 aspect-auto justify-center relative w-full place-content-center rounded-lg mb-4 overflow-y-scroll'
   let imageHeight = ''
   if (props.pinDetails.size === "small") {
     imageHeight = "w-full object-cover aspect-video"
@@ -13,13 +15,34 @@ function Pin(props) {
     imageHeight = "w-full object-cover aspect-auto"
   }
 
+  const handleClick = async (e) => {
+    e.preventDefault()
+    try {
+      const res = await fetch(`${URL}/pins/${props.pinDetails.id}`, {
+        method: 'DELETE',
+        // body: JSON.stringify(props.pinDetails),
+        headers: {
+          "Content-Type": 'application/json'
+        }
+      })
+      const data = await res.json()
+      console.log(data)
+
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+
   return (
     <div className={pinStyle}>
-      <a href={props.pinDetails.img_blob} target="_blank" rel="noreferrer">
-        <img src={props.pinDetails.img_blob} className={imageHeight} alt='' altprop='' />
+
+      <img src={props.pinDetails.img_blob} className={imageHeight} alt='' altprop='' />
+      <div>
         <div className='text-left text-lg pt-1 text-white md:text-black'>{props.pinDetails.title}</div>
         <div className='text-left pt-1 pb-6 text-white md:text-black'>{props.pinDetails.description}</div>
-      </a>
+        <box-icon type='solid' name='trash' onClick={handleClick}></box-icon>
+      </div>
     </div>
   )
 
