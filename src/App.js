@@ -31,14 +31,14 @@ import Home from "./pages/Home.js";
 import Today from "./pages/Today.js";
 import Create from "./pages/Create.js";
 
-
+const URL = 'https://json-server-production-f1f5.up.railway.app'
 
 function App() {
   const [pins, setPins] = useState([]);
 
   useEffect(() => {
     const fetchPins = async () => {
-      const res = await fetch("https://json-server-production-f1f5.up.railway.app")
+      const res = await fetch(`${URL}/pins`)
       const json = await res.json()
       if (res.ok) {
         setPins(json)
@@ -50,7 +50,7 @@ function App() {
 
   const add_pin = async (pinDetails) => {
     // post pinDetails to db, use AI localhost:3500/pins fetch
-    const res = await fetch("http://localhost:3500/pins", {
+    const res = await fetch(`${URL}/pins`, {
       method: 'POST',
       body: JSON.stringify(pinDetails),
       headers: {
