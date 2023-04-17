@@ -60,6 +60,7 @@ function App() {
 
     console.log(res.status)
 
+
     // if (res.status !== 404) {
     //   const data = res.json();
     //   setPins([...pinDetails, { pinDetails }])
@@ -75,6 +76,23 @@ function App() {
     setPins(() => [...pins, pinDetails]);
   };
 
+  const handleDeletePin = async (id) => {
+    try {
+      const res = await fetch(`${URL}/pins/${id}`, {
+        method: 'DELETE',
+        headers: {
+          "Content-Type": 'application/json'
+        }
+      })
+      const data = await res.json()
+      console.log(data)
+      const newPins = pins.filter(pin => pin.id !== id)
+      setPins(newPins)
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <Router>
@@ -82,7 +100,7 @@ function App() {
 
         <Switch>
           <Route path="/create">
-            <Create add_pin={add_pin} pins={pins} />
+            <Create add_pin={add_pin} pins={pins} handleDeletePin={handleDeletePin} />
           </Route>
           <Route path="/today">
             <Today />{" "}

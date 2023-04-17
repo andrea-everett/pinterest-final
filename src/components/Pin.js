@@ -1,7 +1,5 @@
 import React from "react";
 import "boxicons";
-import { URL } from "../utilities/serverURL";
-
 
 function Pin(props) {
   let pinStyle = 'border-solid border-2 border-black-600 aspect-auto justify-center relative w-full place-content-center rounded-lg mb-4 overflow-y-scroll'
@@ -15,33 +13,33 @@ function Pin(props) {
     imageHeight = "w-full object-cover aspect-auto"
   }
 
-  const handleClick = async (e) => {
-    e.preventDefault()
-    try {
-      const res = await fetch(`${URL}/pins/${props.pinDetails.id}`, {
-        method: 'DELETE',
-        // body: JSON.stringify(props.pinDetails),
-        headers: {
-          "Content-Type": 'application/json'
-        }
-      })
-      const data = await res.json()
-      console.log(data)
+  // const handleDeletePin = async (e) => {
+  //   e.preventDefault()
+  //   try {
+  //     const res = await fetch(`${URL}/pins/${props.pinDetails.id}`, {
+  //       method: 'DELETE',
+  //       // body: JSON.stringify(props.pinDetails),
+  //       headers: {
+  //         "Content-Type": 'application/json'
+  //       }
+  //     })
+  //     const data = await res.json()
+  //     console.log(data)
 
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
   return (
     <div className={pinStyle}>
       <div className='relative'>
-        <div className='absolute top-1 right-1'>
-          <box-icon name='x-circle' onClick={handleClick}></box-icon>
+        <div className='absolute top-1 right-1' onClick={() => props.handleDeletePin(props.pinDetails.id)}>
+          <box-icon name='x-circle'></box-icon>
         </div>
         <img src={props.pinDetails.img_blob} className={imageHeight} alt='' altprop='' />
       </div>
-    <div>
+      <div>
 
         <div className='text-left text-lg pt-1 text-white md:text-black'>{props.pinDetails.title}</div>
         <div className='text-left pt-1 pb-6 text-white md:text-black'>{props.pinDetails.description}</div>
