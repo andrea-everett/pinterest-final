@@ -61,8 +61,6 @@ function AddPinForm(props) {
     image.style.opacity = 1;
   }
 
-
-
   async function save_pin(pinDetails, add_pin) {
     // generate new IDS with https://www.npmjs.com/package/uuid
     const newId = uuidv4()
