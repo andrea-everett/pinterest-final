@@ -31,17 +31,20 @@ function Pin(props) {
     } catch (error) {
       console.log(error)
     }
-
   }
 
   return (
     <div className={pinStyle}>
+      <div className='relative'>
+        <div className='absolute top-1 right-1'>
+          <box-icon name='x-circle' onClick={handleClick}></box-icon>
+        </div>
+        <img src={props.pinDetails.img_blob} className={imageHeight} alt='' altprop='' />
+      </div>
+    <div>
 
-      <img src={props.pinDetails.img_blob} className={imageHeight} alt='' altprop='' />
-      <div>
         <div className='text-left text-lg pt-1 text-white md:text-black'>{props.pinDetails.title}</div>
         <div className='text-left pt-1 pb-6 text-white md:text-black'>{props.pinDetails.description}</div>
-        <box-icon type='solid' name='trash' onClick={handleClick}></box-icon>
       </div>
     </div>
   )

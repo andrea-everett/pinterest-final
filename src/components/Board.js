@@ -4,7 +4,7 @@ import Pin from "./Pin.js"
 
 function Board({ pins }) {
   return (
-    <div className="columns-2 md:columns-3 lg:columns-4 mx-20">
+    <div className="columns-2 md:columns-3 lg:columns-4 mx-20 break-inside-avoid">
       {pins.map(pin => <Pin pinDetails={pin} key={pin.id} />
       )}
     </div>
