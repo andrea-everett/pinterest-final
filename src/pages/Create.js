@@ -12,5 +12,3 @@ const Create = ({ pins, add_pin, handleDeletePin }) => {
 }
 
 export default Create;
-
-// flex flex-col w-3/4 inset-x-0 mx-auto

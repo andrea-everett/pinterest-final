@@ -85,11 +85,6 @@ function AddPinForm(props) {
     });
   }
 
-  // repo.create({
-  //   userId,
-  // })
-
-
   return (
     <div className="add_pin_modal">
       <div
@@ -240,12 +235,5 @@ function AddPinForm(props) {
     </div>
   );
 }
-
-
-// function Modal(props) {
-//         return(
-//                 <h1>testing</h1>
-//         )
-// }
 
 export default AddPinForm;

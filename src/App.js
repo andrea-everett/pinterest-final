@@ -1,28 +1,3 @@
-// import React, { Fragment } from "react";
-// import Header from './components/TheHeader.js';
-// import Home from './components/Home.js';
-// import Modal from './components/Create.js';
-
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-// function App() {
-//     return (
-//       <Fragment>
-//       <Router>
-//           <Header />
-//             <Switch>
-
-//               <Route path="/create"><Modal/> </Route>
-
-//               <Route path="/"><Home/></Route>
-
-//           </Switch>
-//       </Router>
-//     </Fragment>
-//       );
-// }
-
-// export default App;
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { URL } from "./utilities/serverURL";
