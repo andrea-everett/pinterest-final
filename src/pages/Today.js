@@ -4,7 +4,7 @@ import Image from '../components/Image.js';
 
 
 export default function Home() {
-  const [images, setImages, person] = useState([]);
+  const [images, setImages] = useState([]);
   const [isBackgroundVisible, setBackgroundVisible] = useState(true);
 
   useEffect(() => {
@@ -36,7 +36,6 @@ export default function Home() {
                 fullImageUrl={image.urls.full}
                 imageUrl={image.urls.thumb}
                 userName={image.user.name}
-              // profileImage={user.name.profile_image} 
               />)}
           </div>
           : null}
