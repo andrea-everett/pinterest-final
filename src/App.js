@@ -34,20 +34,6 @@ function App() {
     })
 
     console.log(res.status)
-
-
-    // if (res.status !== 404) {
-    //   const data = res.json();
-    //   setPins([...pinDetails, { pinDetails }])
-    // } else {
-    //   setPins([...pinDetails])
-    // }
-
-    // } catch (error) {
-    //   console.log(error.message)
-    //   setLoading(false)
-    // }
-
     setPins(() => [...pins, pinDetails]);
   };
 
@@ -72,7 +58,6 @@ function App() {
   return (
     <Router>
       <TheHeader>
-
         <Switch>
           <Route path="/create">
             <Create add_pin={add_pin} pins={pins} handleDeletePin={handleDeletePin} />
