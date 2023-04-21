@@ -28,6 +28,7 @@ function App() {
       method: 'POST',
       body: JSON.stringify(pinDetails),
       headers: {
+ testing-branch
         'Content-Type': 'application/json',
       },
     });
@@ -46,6 +47,13 @@ function App() {
     //   setLoading(false)
     // }
 
+=======
+        "Content-Type": 'application/json'
+      }
+    })
+
+    console.log(res.status)
+ main
     setPins(() => [...pins, pinDetails]);
   };
 
